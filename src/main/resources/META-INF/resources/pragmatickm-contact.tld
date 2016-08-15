@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
+Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+	support@aoindustries.com
+	7262 Bull Pen Cir
+	Mobile, AL 36695
+
+This file is part of pragmatickm-contact-taglib.
+
+pragmatickm-contact-taglib is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pragmatickm-contact-taglib is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+	<description>Contacts nested within SemanticCMS pages and elements in a JSP environment.</description>
+	<display-name>pragmatickm-contact-taglib</display-name>
+	<tlib-version>1.0</tlib-version>
+	<short-name>pragmatickm-contact-taglib</short-name>
+	<uri>https://pragmatickm.com/pragmatickm-contact-taglib</uri>
+	<tag>
+		<description><![CDATA[
+			<p>
+				A set of contact information.
+			</p>
+			<p>
+				Phone numbers may be added with nested &lt;d:phone&gt; tags.
+			</p>
+			<p>
+				Addresses may be added with nested &lt;d:address&gt; tags.
+			</p>
+			<p>
+				Websites may be added with nested &lt;d:webPage&gt; tags.
+			</p>
+			<p>
+				Any HTML in the body is displayed in the detailed comments area.
+			</p>
+		]]></description>
+		<name>contact</name>
+		<tag-class>com.pragmatickm.contact.taglib.ContactTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<description><![CDATA[
+				The id used in URL anchors.
+				If not provided, is generated from the name.
+				Must be unique per page.
+				Ids generated from names will be unique, but may change as page structure changes.
+			]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Optional CSS style attribute.
+			]]></description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				The contact's title, such as Mr., Ms, ...
+			]]></description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				First name.
+			]]></description>
+			<name>first</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Middle name.
+			]]></description>
+			<name>middle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Nickname.
+			]]></description>
+			<name>nick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Last name.
+			]]></description>
+			<name>last</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Maiden name.
+			]]></description>
+			<name>maiden</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Any suffix appended to the name after a comma (,).
+			]]></description>
+			<name>suffix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Company name.
+			]]></description>
+			<name>company</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Department name.
+			]]></description>
+			<name>department</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Job title, such as Directory, CEO, ...
+			]]></description>
+			<name>jobTitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Email address.
+				Email addresses may also be provided with nested &lt;d:email&gt; tags.
+			]]></description>
+			<name>email</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				URL of their web page.
+				Web pages may also be provided with nested &lt;d:webPage&gt; tags.
+			]]></description>
+			<name>webPage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[
+			A contact may have any number of addresses.
+			Must be nested inside a &lt;d:contact&gt; tag.
+		]]></description>
+		<name>address</name>
+		<tag-class>com.pragmatickm.contact.taglib.AddressTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description><![CDATA[
+				The type of the address, may be one of "work", "home", or "pobox".
+			]]></description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Address1 line.
+			]]></description>
+			<name>address1</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Address2 line.
+			]]></description>
+			<name>address2</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				City.
+			]]></description>
+			<name>city</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				State or province.
+			]]></description>
+			<name>stateProv</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				ZIP or postal code.
+			]]></description>
+			<name>zipPostal</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Country.
+			]]></description>
+			<name>country</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Brief comment associated with this address.
+			]]></description>
+			<name>comment</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[
+			A contact may have any number of email addresses.
+			When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+			Otherwise, will write the email address as a link inline.
+		]]></description>
+		<name>email</name>
+		<tag-class>com.pragmatickm.contact.taglib.EmailTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description><![CDATA[
+				The email address.
+			]]></description>
+			<name>address</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[
+			A contact may have any number of phone numbers.
+			When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+			Otherwise, will write the phone number inline.
+		]]></description>
+		<name>phone</name>
+		<tag-class>com.pragmatickm.contact.taglib.PhoneTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description><![CDATA[
+				The type of the phone number, may be one of "work", "home", "mobile", "pager", "fax".
+			]]></description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Phone number.
+			]]></description>
+			<name>number</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Brief comment associated with this phone number.
+			]]></description>
+			<name>comment</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[
+			A contact may have any number of instant messaging handles.
+			When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+			Otherwise, will write the instant messaging handle inline.
+		]]></description>
+		<name>im</name>
+		<tag-class>com.pragmatickm.contact.taglib.ImTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description><![CDATA[
+				The type of the instant message, may be one of "aim", "icq", "skype".
+			]]></description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				The instant messaging handle.
+			]]></description>
+			<name>handle</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				Brief comment associated with this instant messaging handle.
+			]]></description>
+			<name>comment</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[
+			A contact may have any number of web pages.
+			When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+			Otherwise, will write the link to the web page inline.
+		]]></description>
+		<name>webPage</name>
+		<tag-class>com.pragmatickm.contact.taglib.WebPageTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description><![CDATA[
+				The URL of the web page.
+			]]></description>
+			<name>href</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+</taglib>
