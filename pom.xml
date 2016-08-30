@@ -25,7 +25,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 	<groupId>com.pragmatickm</groupId>
 	<artifactId>pragmatickm-contact-taglib</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>PragmaticKM Contact Taglib</name>
@@ -40,7 +40,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		<!--
 		<url>http://github.com/aoindustries/pragmatickm-contact-taglib</url>
 		-->
-		<tag>HEAD</tag>
+		<tag>pragmatickm-contact-taglib-1.0</tag>
 	</scm>
 
 	<dependencies>
