@@ -17,6 +17,11 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<prerequisites>
+		<!-- 3.3.1 required for extensions.xml -->
+		<maven>3.3.1</maven>
+	</prerequisites>
+
 	<parent>
 		<groupId>com.pragmatickm</groupId>
 		<artifactId>pragmatickm-contact</artifactId>
@@ -42,6 +47,13 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		-->
 		<tag>HEAD</tag>
 	</scm>
+
+	<repositories>
+		<repository>
+			<id>pragmatickm-repository</id>
+			<url>scpexe://private.cvs.aoindustries.com/var/maven2/pragmatickm</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
