@@ -25,7 +25,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	<description>Contacts nested within SemanticCMS pages and elements in a JSP environment.</description>
 	<display-name>pragmatickm-contact-taglib</display-name>
 	<tlib-version>1.0</tlib-version>
-	<short-name>pragmatickm-contact-taglib</short-name>
+	<short-name>contact</short-name>
 	<uri>https://pragmatickm.com/contact/taglib/</uri>
 	<tag>
 		<description><![CDATA[
