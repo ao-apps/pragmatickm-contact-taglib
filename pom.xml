@@ -36,6 +36,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 	<name>PragmaticKM Contact Taglib</name>
 	<url>https://pragmatickm.com/contact/taglib/</url>
 	<description>Contacts nested within SemanticCMS pages and elements in a JSP environment.</description>
+	<inceptionYear>2013</inceptionYear>
 
 	<scm>
 		<!--
