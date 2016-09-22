@@ -79,7 +79,7 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 				JspWriter out = pageContext.getOut();
 				if(node == null) {
 					// Write now
-					writeTo(out, new PageElementContext(pageContext));
+					if(captureLevel == CaptureLevel.BODY) writeTo(out, new PageElementContext(pageContext));
 				} else {
 					// Write an element marker instead
 					Contact contact = new Contact();
