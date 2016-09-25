@@ -22,6 +22,7 @@
  */
 package com.pragmatickm.contact.taglib;
 
+import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Address;
 import com.pragmatickm.contact.model.AddressType;
 import com.pragmatickm.contact.model.Contact;
@@ -30,6 +31,7 @@ import com.semanticcms.core.servlet.CaptureLevel;
 import com.semanticcms.core.servlet.CurrentNode;
 import java.io.IOException;
 import java.util.Locale;
+import javax.el.ELContext;
 import javax.servlet.ServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
@@ -38,43 +40,43 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class AddressTag extends SimpleTagSupport {
 
-	private AddressType type;
-    public void setType(String type) {
-		this.type = AddressType.valueOf(type.toUpperCase(Locale.ROOT));
+	private Object type;
+    public void setType(Object type) {
+		this.type = type;
     }
 
-	private String address1;
-	public void setAddress1(String address1) {
+	private Object address1;
+	public void setAddress1(Object address1) {
 		this.address1 = address1;
 	}
 
-	private String address2;
-	public void setAddress2(String address2) {
+	private Object address2;
+	public void setAddress2(Object address2) {
 		this.address2 = address2;
 	}
 
-	private String city;
-	public void setCity(String city) {
+	private Object city;
+	public void setCity(Object city) {
 		this.city = city;
 	}
 
-	private String stateProv;
-	public void setStateProv(String stateProv) {
+	private Object stateProv;
+	public void setStateProv(Object stateProv) {
 		this.stateProv = stateProv;
 	}
 
-	private String zipPostal;
-	public void setZipPostal(String zipPostal) {
+	private Object zipPostal;
+	public void setZipPostal(Object zipPostal) {
 		this.zipPostal = zipPostal;
 	}
 
-	private String country;
-	public void setCountry(String country) {
+	private Object country;
+	public void setCountry(Object country) {
 		this.country = country;
 	}
 
-	private String comment;
-	public void setComment(String comment) {
+	private Object comment;
+	public void setComment(Object comment) {
 		this.comment = comment;
 	}
 
@@ -90,16 +92,23 @@ public class AddressTag extends SimpleTagSupport {
 			if(!(currentNode instanceof Contact)) throw new JspTagException("<address> must be nested in <contact>");
 			final Contact currentContact = (Contact)currentNode;
 
+			// Evaluate expressions
+			ELContext elContext = pageContext.getELContext();
+			AddressType typeObj = AddressType.valueOf(
+				resolveValue(type, String.class, elContext)
+					.toUpperCase(Locale.ROOT)
+			);
+
 			currentContact.addAddress(
 				new Address(
-					type,
-					address1,
-					address2,
-					city,
-					stateProv,
-					zipPostal,
-					country,
-					comment
+					typeObj,
+					resolveValue(address1, String.class, elContext),
+					resolveValue(address2, String.class, elContext),
+					resolveValue(city, String.class, elContext),
+					resolveValue(stateProv, String.class, elContext),
+					resolveValue(zipPostal, String.class, elContext),
+					resolveValue(country, String.class, elContext),
+					resolveValue(comment, String.class, elContext)
 				)
 			);
 		}

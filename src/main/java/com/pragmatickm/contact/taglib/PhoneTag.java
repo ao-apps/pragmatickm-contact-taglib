@@ -24,6 +24,7 @@ package com.pragmatickm.contact.taglib;
 
 import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoindustries.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
+import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Contact;
 import com.pragmatickm.contact.model.PhoneNumber;
 import com.pragmatickm.contact.model.PhoneType;
@@ -39,6 +40,7 @@ import com.semanticcms.core.taglib.PageElementContext;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Locale;
+import javax.el.ELContext;
 import javax.servlet.ServletRequest;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.JspWriter;
@@ -47,21 +49,22 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 
-	private PhoneType type;
-    public void setType(String type) {
-		this.type = PhoneType.valueOf(type.toUpperCase(Locale.ROOT));
+	private Object type;
+    public void setType(Object type) {
+		this.type = type;
     }
 
-	private String number;
-	public void setNumber(String number) {
+	private Object number;
+	public void setNumber(Object number) {
 		this.number = number;
 	}
 
-	private String comment;
-	public void setComment(String comment) {
+	private Object comment;
+	public void setComment(Object comment) {
 		this.comment = comment;
 	}
 
+	private PhoneNumber newPhoneNumber;
 	@Override
     public void doTag() throws JspTagException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
@@ -70,7 +73,18 @@ public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 		// Get the current capture state
 		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
 		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
-			PhoneNumber newPhoneNumber = new PhoneNumber(type, number, comment);
+			// Evaluate expressions
+			ELContext elContext = pageContext.getELContext();
+			PhoneType typeObj = PhoneType.valueOf(
+				resolveValue(type, String.class, elContext)
+					.toUpperCase(Locale.ROOT)
+			);
+
+			newPhoneNumber = new PhoneNumber(
+				typeObj,
+				resolveValue(number, String.class, elContext),
+				resolveValue(comment, String.class, elContext)
+			);
 			Node node = CurrentNode.getCurrentNode(request);
 			if(node instanceof Contact) {
 				Contact currentContact = (Contact)node;
@@ -108,9 +122,9 @@ public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		out.write("<span class=\"");
-		encodeTextInXhtmlAttribute(type.getCssClass(), out);
+		encodeTextInXhtmlAttribute(newPhoneNumber.getType().getCssClass(), out);
 		out.write("\">");
-		encodeTextInXhtml(number, out);
+		encodeTextInXhtml(newPhoneNumber.getNumber(), out);
 		out.write("</span>");
 	}
 }

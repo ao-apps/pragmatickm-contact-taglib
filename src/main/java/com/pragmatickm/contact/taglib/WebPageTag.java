@@ -24,6 +24,7 @@ package com.pragmatickm.contact.taglib;
 
 import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoindustries.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
+import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Contact;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.model.ElementWriter;
@@ -44,10 +45,12 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 
-	private String href;
-    public void setHref(String href) {
+	private Object href;
+    public void setHref(Object href) {
 		this.href = href;
     }
+
+	private String hrefStr;
 
 	@Override
     public void doTag() throws JspTagException, IOException {
@@ -57,10 +60,13 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 		// Get the current capture state
 		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
 		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
+			// Evaluate expressions
+			hrefStr = resolveValue(href, String.class, pageContext.getELContext());
+
 			Node node = CurrentNode.getCurrentNode(request);
 			if(node instanceof Contact) {
 				Contact currentContact = (Contact)node;
-				currentContact.addWebPage(href);
+				currentContact.addWebPage(hrefStr);
 			} else {
 				JspWriter out = pageContext.getOut();
 				if(node == null) {
@@ -69,7 +75,7 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 				} else {
 					// Write an element marker instead
 					Contact contact = new Contact();
-					contact.addWebPage(href);
+					contact.addWebPage(hrefStr);
 					// Find the optional parent page
 					Page currentPage = CurrentPage.getCurrentPage(request);
 					if(currentPage != null) {
@@ -94,9 +100,9 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		out.write("<span class=\"contact_web_page\"><a href=\"");
-		encodeTextInXhtmlAttribute(href, out);
+		encodeTextInXhtmlAttribute(hrefStr, out);
 		out.write("\">");
-		encodeTextInXhtml(href, out);
+		encodeTextInXhtml(hrefStr, out);
 		out.write("</a></span>");
 	}
 }
