@@ -32,6 +32,7 @@ import com.semanticcms.core.servlet.CurrentNode;
 import java.io.IOException;
 import java.util.Locale;
 import javax.el.ELContext;
+import javax.el.ValueExpression;
 import javax.servlet.ServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
@@ -40,43 +41,43 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class AddressTag extends SimpleTagSupport {
 
-	private Object type;
-    public void setType(Object type) {
+	private ValueExpression type;
+    public void setType(ValueExpression type) {
 		this.type = type;
     }
 
-	private Object address1;
-	public void setAddress1(Object address1) {
+	private ValueExpression address1;
+	public void setAddress1(ValueExpression address1) {
 		this.address1 = address1;
 	}
 
-	private Object address2;
-	public void setAddress2(Object address2) {
+	private ValueExpression address2;
+	public void setAddress2(ValueExpression address2) {
 		this.address2 = address2;
 	}
 
-	private Object city;
-	public void setCity(Object city) {
+	private ValueExpression city;
+	public void setCity(ValueExpression city) {
 		this.city = city;
 	}
 
-	private Object stateProv;
-	public void setStateProv(Object stateProv) {
+	private ValueExpression stateProv;
+	public void setStateProv(ValueExpression stateProv) {
 		this.stateProv = stateProv;
 	}
 
-	private Object zipPostal;
-	public void setZipPostal(Object zipPostal) {
+	private ValueExpression zipPostal;
+	public void setZipPostal(ValueExpression zipPostal) {
 		this.zipPostal = zipPostal;
 	}
 
-	private Object country;
-	public void setCountry(Object country) {
+	private ValueExpression country;
+	public void setCountry(ValueExpression country) {
 		this.country = country;
 	}
 
-	private Object comment;
-	public void setComment(Object comment) {
+	private ValueExpression comment;
+	public void setComment(ValueExpression comment) {
 		this.comment = comment;
 	}
 

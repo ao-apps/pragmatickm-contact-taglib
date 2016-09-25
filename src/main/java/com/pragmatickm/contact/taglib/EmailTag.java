@@ -39,6 +39,7 @@ import com.semanticcms.core.servlet.CurrentPage;
 import com.semanticcms.core.taglib.PageElementContext;
 import java.io.IOException;
 import java.io.Writer;
+import javax.el.ValueExpression;
 import javax.servlet.ServletRequest;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.JspWriter;
@@ -47,8 +48,8 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class EmailTag extends SimpleTagSupport implements ElementWriter {
 
-	private Object address;
-    public void setAddress(Object address) {
+	private ValueExpression address;
+    public void setAddress(ValueExpression address) {
 		this.address = address;
     }
 

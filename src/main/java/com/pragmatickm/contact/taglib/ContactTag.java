@@ -26,7 +26,6 @@ import com.aoindustries.aoserv.client.validator.Email;
 import com.aoindustries.aoserv.client.validator.ValidationException;
 import com.aoindustries.encoding.Coercion;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
-import com.aoindustries.taglib.StyleAttribute;
 import com.aoindustries.util.StringUtility;
 import com.pragmatickm.contact.model.Contact;
 import com.pragmatickm.contact.servlet.impl.ContactImpl;
@@ -37,75 +36,75 @@ import com.semanticcms.core.taglib.ElementTag;
 import java.io.IOException;
 import java.io.Writer;
 import javax.el.ELContext;
+import javax.el.ValueExpression;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.PageContext;
 
-public class ContactTag extends ElementTag<Contact> implements StyleAttribute {
+public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*/ {
 
-	private Object style;
-	@Override
-	public void setStyle(Object style) {
+	private ValueExpression style;
+	public void setStyle(ValueExpression style) {
 		this.style = style;
 	}
 
-	private Object title;
-	public void setTitle(Object title) {
+	private ValueExpression title;
+	public void setTitle(ValueExpression title) {
 		this.title = title;
 	}
 
-	private Object first;
-	public void setFirst(Object first) {
+	private ValueExpression first;
+	public void setFirst(ValueExpression first) {
 		this.first = first;
 	}
 
-	private Object middle;
-	public void setMiddle(Object middle) {
+	private ValueExpression middle;
+	public void setMiddle(ValueExpression middle) {
 		this.middle = middle;
 	}
 
-	private Object nick;
-	public void setNick(Object nick) {
+	private ValueExpression nick;
+	public void setNick(ValueExpression nick) {
 		this.nick = nick;
 	}
 
-	private Object last;
-	public void setLast(Object last) {
+	private ValueExpression last;
+	public void setLast(ValueExpression last) {
 		this.last = last;
 	}
 
-	private Object maiden;
-	public void setMaiden(Object maiden) {
+	private ValueExpression maiden;
+	public void setMaiden(ValueExpression maiden) {
 		this.maiden = maiden;
 	}
 
-	private Object suffix;
-	public void setSuffix(Object suffix) {
+	private ValueExpression suffix;
+	public void setSuffix(ValueExpression suffix) {
 		this.suffix = suffix;
 	}
 
-	private Object company;
-	public void setCompany(Object company) {
+	private ValueExpression company;
+	public void setCompany(ValueExpression company) {
 		this.company = company;
 	}
 
-	private Object department;
-	public void setDepartment(Object department) {
+	private ValueExpression department;
+	public void setDepartment(ValueExpression department) {
 		this.department = department;
 	}
 
-	private Object jobTitle;
-	public void setJobTitle(Object jobTitle) {
+	private ValueExpression jobTitle;
+	public void setJobTitle(ValueExpression jobTitle) {
 		this.jobTitle = jobTitle;
 	}
 
-	private Object email;
-    public void setEmail(Object email) {
+	private ValueExpression email;
+    public void setEmail(ValueExpression email) {
 		this.email = email;
     }
 
-	private Object webPage;
-    public void setWebPage(Object webPage) {
+	private ValueExpression webPage;
+    public void setWebPage(ValueExpression webPage) {
 		this.webPage = webPage;
     }
 
@@ -118,7 +117,6 @@ public class ContactTag extends ElementTag<Contact> implements StyleAttribute {
 	protected void evaluateAttributes(Contact element, ELContext elContext) throws JspTagException, IOException {
 		try {
 			super.evaluateAttributes(element, elContext);
-			style = Coercion.nullIfEmpty(resolveValue(style, Object.class, elContext));
 			element.setTitle(resolveValue(title, String.class, elContext));
 			element.setFirst(resolveValue(first, String.class, elContext));
 			element.setMiddle(resolveValue(middle, String.class, elContext));
@@ -139,15 +137,20 @@ public class ContactTag extends ElementTag<Contact> implements StyleAttribute {
 	}
 
 	private PageIndex pageIndex;
+	private Object styleObj;
+
 	@Override
 	protected void doBody(Contact contact, CaptureLevel captureLevel) throws JspException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
-		pageIndex = PageIndex.getCurrentPageIndex(pageContext.getRequest());
+		if(captureLevel == CaptureLevel.BODY) {
+			pageIndex = PageIndex.getCurrentPageIndex(pageContext.getRequest());
+			styleObj = Coercion.nullIfEmpty(resolveValue(style, Object.class, pageContext.getELContext()));
+		}
 		super.doBody(contact, captureLevel);
 	}
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		ContactImpl.writeContactTable(pageIndex, out, context, style, getElement());
+		ContactImpl.writeContactTable(pageIndex, out, context, styleObj, getElement());
 	}
 }

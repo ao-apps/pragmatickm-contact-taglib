@@ -41,6 +41,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.Locale;
 import javax.el.ELContext;
+import javax.el.ValueExpression;
 import javax.servlet.ServletRequest;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.JspWriter;
@@ -49,18 +50,18 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 
-	private Object type;
-    public void setType(Object type) {
+	private ValueExpression type;
+    public void setType(ValueExpression type) {
 		this.type = type;
     }
 
-	private Object number;
-	public void setNumber(Object number) {
+	private ValueExpression number;
+	public void setNumber(ValueExpression number) {
 		this.number = number;
 	}
 
-	private Object comment;
-	public void setComment(Object comment) {
+	private ValueExpression comment;
+	public void setComment(ValueExpression comment) {
 		this.comment = comment;
 	}
 
