@@ -75,10 +75,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 							<configuration>
 								<links>
 									<link>http://docs.oracle.com/javaee/6/api/</link>
-									<link>https://www.aoindustries.com/docs/ao-encoding/</link>
-									<link>https://www.aoindustries.com/docs/ao-taglib/</link>
-									<link>https://www.aoindustries.com/docs/aocode-public/</link>
-									<link>https://www.aoindustries.com/docs/aoserv-client/</link>
+									<link>https://www.aoindustries.com/ao-encoding/apidocs/</link>
+									<link>https://www.aoindustries.com/ao-taglib/apidocs/</link>
+									<link>https://www.aoindustries.com/aocode-public/apidocs/</link>
+									<link>https://www.aoindustries.com/aoserv/client/apidocs/</link>
 									<link>https://pragmatickm.com/contact/model/apidocs/</link>
 									<link>https://pragmatickm.com/contact/servlet/apidocs/</link>
 									<link>https://semanticcms.com/core/model/apidocs/</link>
