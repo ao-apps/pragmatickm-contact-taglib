@@ -26,7 +26,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
 	<description>@{project.description}</description>
-	<display-name>@{project.artifactId}</display-name>
+	<display-name>@{project.name}</display-name>
 	<tlib-version>
 		<!-- Release: @{project.version} -->
 		@{parsedVersion.majorVersion}.@{parsedVersion.minorVersion}.@{parsedVersion.incrementalVersion}
