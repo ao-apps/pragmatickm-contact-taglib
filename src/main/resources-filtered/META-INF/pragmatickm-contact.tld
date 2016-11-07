@@ -25,7 +25,9 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
-	<description>@{project.description}</description>
+	<description><![CDATA[
+		<p>@{project.description}</p>
+	]]></description>
 	<display-name>@{project.name}</display-name>
 	<tlib-version>
 		<!-- Release: @{project.version} -->
@@ -56,10 +58,12 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<body-content>scriptless</body-content>
 		<attribute>
 			<description><![CDATA[
-				The id used in URL anchors.
-				If not provided, is generated from the name.
-				Must be unique per page.
-				Ids generated from names will be unique, but may change as page structure changes.
+				<p>
+					The id used in URL anchors.
+					If not provided, is generated from the name.
+					Must be unique per page.
+					Ids generated from names will be unique, but may change as page structure changes.
+				</p>
 			]]></description>
 			<name>id</name>
 			<required>false</required>
@@ -69,7 +73,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Optional CSS style attribute.
+				<p>Optional CSS style attribute.</p>
 			]]></description>
 			<name>style</name>
 			<required>false</required>
@@ -79,7 +83,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				The contact's title, such as Mr., Ms, ...
+				<p>The contact's title, such as Mr., Ms, ...</p>
 			]]></description>
 			<name>title</name>
 			<required>false</required>
@@ -89,7 +93,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				First name.
+				<p>First name.</p>
 			]]></description>
 			<name>first</name>
 			<required>false</required>
@@ -99,7 +103,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Middle name.
+				<p>Middle name.</p>
 			]]></description>
 			<name>middle</name>
 			<required>false</required>
@@ -109,7 +113,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Nickname.
+				<p>Nickname.</p>
 			]]></description>
 			<name>nick</name>
 			<required>false</required>
@@ -119,7 +123,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Last name.
+				<p>Last name.</p>
 			]]></description>
 			<name>last</name>
 			<required>false</required>
@@ -129,7 +133,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Maiden name.
+				<p>Maiden name.</p>
 			]]></description>
 			<name>maiden</name>
 			<required>false</required>
@@ -139,7 +143,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Any suffix appended to the name after a comma (,).
+				<p>Any suffix appended to the name after a comma (,).</p>
 			]]></description>
 			<name>suffix</name>
 			<required>false</required>
@@ -149,7 +153,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Company name.
+				<p>Company name.</p>
 			]]></description>
 			<name>company</name>
 			<required>false</required>
@@ -159,7 +163,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Department name.
+				<p>Department name.</p>
 			]]></description>
 			<name>department</name>
 			<required>false</required>
@@ -169,7 +173,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Job title, such as Directory, CEO, ...
+				<p>Job title, such as Directory, CEO, ...</p>
 			]]></description>
 			<name>jobTitle</name>
 			<required>false</required>
@@ -179,8 +183,10 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Email address.
-				Email addresses may also be provided with nested &lt;d:email&gt; tags.
+				<p>
+					Email address.
+					Email addresses may also be provided with nested &lt;d:email&gt; tags.
+				</p>
 			]]></description>
 			<name>email</name>
 			<required>false</required>
@@ -190,8 +196,10 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				URL of their web page.
-				Web pages may also be provided with nested &lt;d:webPage&gt; tags.
+				<p>
+					URL of their web page.
+					Web pages may also be provided with nested &lt;d:webPage&gt; tags.
+				</p>
 			]]></description>
 			<name>webPage</name>
 			<required>false</required>
@@ -202,15 +210,19 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			A contact may have any number of addresses.
-			Must be nested inside a &lt;d:contact&gt; tag.
+			<p>
+				A contact may have any number of addresses.
+				Must be nested inside a &lt;d:contact&gt; tag.
+			</p>
 		]]></description>
 		<name>address</name>
 		<tag-class>com.pragmatickm.contact.taglib.AddressTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description><![CDATA[
-				The type of the address, may be one of "work", "home", or "pobox".
+				<p>
+					The type of the address, may be one of "work", "home", or "pobox".
+				</p>
 			]]></description>
 			<name>type</name>
 			<required>true</required>
@@ -220,7 +232,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Address1 line.
+				<p>Address1 line.</p>
 			]]></description>
 			<name>address1</name>
 			<required>false</required>
@@ -230,7 +242,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Address2 line.
+				<p>Address2 line.</p>
 			]]></description>
 			<name>address2</name>
 			<required>false</required>
@@ -240,7 +252,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				City.
+				<p>City.</p>
 			]]></description>
 			<name>city</name>
 			<required>false</required>
@@ -250,7 +262,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				State or province.
+				<p>State or province.</p>
 			]]></description>
 			<name>stateProv</name>
 			<required>false</required>
@@ -260,7 +272,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				ZIP or postal code.
+				<p>ZIP or postal code.</p>
 			]]></description>
 			<name>zipPostal</name>
 			<required>false</required>
@@ -270,7 +282,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Country.
+				<p>Country.</p>
 			]]></description>
 			<name>country</name>
 			<required>false</required>
@@ -280,7 +292,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Brief comment associated with this address.
+				<p>Brief comment associated with this address.</p>
 			]]></description>
 			<name>comment</name>
 			<required>false</required>
@@ -291,16 +303,18 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			A contact may have any number of email addresses.
-			When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
-			Otherwise, will write the email address as a link inline.
+			<p>
+				A contact may have any number of email addresses.
+				When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+				Otherwise, will write the email address as a link inline.
+			</p>
 		]]></description>
 		<name>email</name>
 		<tag-class>com.pragmatickm.contact.taglib.EmailTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description><![CDATA[
-				The email address.
+				<p>The email address.</p>
 			]]></description>
 			<name>address</name>
 			<required>true</required>
@@ -311,16 +325,18 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			A contact may have any number of phone numbers.
-			When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
-			Otherwise, will write the phone number inline.
+			<p>
+				A contact may have any number of phone numbers.
+				When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+				Otherwise, will write the phone number inline.
+			</p>
 		]]></description>
 		<name>phone</name>
 		<tag-class>com.pragmatickm.contact.taglib.PhoneTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description><![CDATA[
-				The type of the phone number, may be one of "work", "home", "mobile", "pager", "fax".
+				<p>The type of the phone number, may be one of "work", "home", "mobile", "pager", "fax".</p>
 			]]></description>
 			<name>type</name>
 			<required>true</required>
@@ -330,7 +346,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Phone number.
+				<p>Phone number.</p>
 			]]></description>
 			<name>number</name>
 			<required>true</required>
@@ -340,7 +356,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Brief comment associated with this phone number.
+				<p>Brief comment associated with this phone number.</p>
 			]]></description>
 			<name>comment</name>
 			<required>false</required>
@@ -351,16 +367,18 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			A contact may have any number of instant messaging handles.
-			When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
-			Otherwise, will write the instant messaging handle inline.
+			<p>
+				A contact may have any number of instant messaging handles.
+				When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+				Otherwise, will write the instant messaging handle inline.
+			</p>
 		]]></description>
 		<name>im</name>
 		<tag-class>com.pragmatickm.contact.taglib.ImTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description><![CDATA[
-				The type of the instant message, may be one of "aim", "icq", "skype".
+				<p>The type of the instant message, may be one of "aim", "icq", "skype".</p>
 			]]></description>
 			<name>type</name>
 			<required>true</required>
@@ -370,7 +388,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				The instant messaging handle.
+				<p>The instant messaging handle.</p>
 			]]></description>
 			<name>handle</name>
 			<required>true</required>
@@ -380,7 +398,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				Brief comment associated with this instant messaging handle.
+				<p>Brief comment associated with this instant messaging handle.</p>
 			]]></description>
 			<name>comment</name>
 			<required>false</required>
@@ -391,16 +409,18 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			A contact may have any number of web pages.
-			When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
-			Otherwise, will write the link to the web page inline.
+			<p>
+				A contact may have any number of web pages.
+				When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+				Otherwise, will write the link to the web page inline.
+			</p>
 		]]></description>
 		<name>webPage</name>
 		<tag-class>com.pragmatickm.contact.taglib.WebPageTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description><![CDATA[
-				The URL of the web page.
+				<p>The URL of the web page.</p>
 			]]></description>
 			<name>href</name>
 			<required>true</required>
