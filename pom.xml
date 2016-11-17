@@ -31,7 +31,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 	<groupId>com.pragmatickm</groupId>
 	<artifactId>pragmatickm-contact-taglib</artifactId>
-	<version>1.3.2-SNAPSHOT</version>
+	<version>1.3.2</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -52,7 +52,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		<!--<connection>scm:git:git://github.com/aoindustries/${project.artifactId}.git</connection>-->
 		<developerConnection>scm:git:ssh://private.cvs.aoindustries.com/var/git/${project.artifactId}</developerConnection>
 		<!--<url>https://github.com/aoindustries/${project.artifactId}</url>-->
-		<tag>HEAD</tag>
+		<tag>pragmatickm-contact-taglib-1.3.2</tag>
 	</scm>
 
 	<repositories>
