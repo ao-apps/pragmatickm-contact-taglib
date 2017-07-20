@@ -138,7 +138,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		<dependency>
 			<groupId>com.aoindustries</groupId>
 			<artifactId>ao-taglib</artifactId>
-			<version>2.3.1-SNAPSHOT</version>
+			<version>2.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId>
