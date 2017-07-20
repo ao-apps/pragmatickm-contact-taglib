@@ -163,7 +163,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-core-servlet</artifactId>
-			<version>1.10.1-SNAPSHOT</version>
+			<version>1.11.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId>
