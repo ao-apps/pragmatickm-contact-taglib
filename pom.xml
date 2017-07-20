@@ -168,7 +168,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-core-taglib</artifactId>
-			<version>1.8.2-SNAPSHOT</version>
+			<version>1.9.0</version>
 		</dependency>
 	</dependencies>
 </project>
