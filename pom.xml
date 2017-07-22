@@ -17,11 +17,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<prerequisites>
-		<!-- 3.3.1 required for extensions.xml -->
-		<maven>3.3.1</maven>
-	</prerequisites>
-
 	<parent>
 		<groupId>com.pragmatickm</groupId>
 		<artifactId>pragmatickm-parent</artifactId>
@@ -49,26 +44,11 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 	<scm>
 		<!-- Can't inherit due to multi-module -->
-		<!--<connection>scm:git:git://github.com/aoindustries/${project.artifactId}.git</connection>-->
-		<developerConnection>scm:git:ssh://private.cvs.aoindustries.com/var/git/${project.artifactId}</developerConnection>
-		<!--<url>https://github.com/aoindustries/${project.artifactId}</url>-->
+		<connection>scm:git:git://github.com/aoindustries/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:aoindustries/${project.artifactId}.git</developerConnection>
+		<url>https://github.com/aoindustries/${project.artifactId}</url>
 		<tag>HEAD</tag>
 	</scm>
-
-	<repositories>
-		<!-- Repository required here, too, so can find parent -->
-		<repository>
-			<id>pragmatickm-repository</id>
-			<url>scpexe://private.cvs.aoindustries.com/var/maven2/pragmatickm</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 	<profiles>
 		<profile>
