@@ -39,7 +39,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		datePublished="2017-07-25T20:56:44-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
-		<c:set var="version" value="@{com.:pragmatickm-contact-taglib:pom.version}" />
+		<c:set var="version" value="@{com.pragmatickm:pragmatickm-contact-taglib:pom.version}" />
 		<ao:assert
 			test="${!fn:startsWith(version, '@')}"
 			message="Version not substituted: #{version}"
