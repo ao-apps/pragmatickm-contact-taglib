@@ -42,6 +42,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 / <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 		<shortTitle>Taglib</shortTitle>
 		<description.html><![CDATA[Contacts nested within <a target="_top" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a JSP environment.]]></description.html>
+		<javadoc.taglibReference><![CDATA[<li><a target="_top" href="${project.url}pragmatickm-contact.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 	</properties>
 
 	<name>PragmaticKM Contact Taglib</name>
