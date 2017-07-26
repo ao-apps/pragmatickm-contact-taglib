@@ -37,7 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T20:56:44-0500"
-		dateModified="2017-07-26T13:44:56-0500"
+		dateModified="2017-07-26T14:11:50-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.pragmatickm:pragmatickm-contact-taglib:pom.version}" />
@@ -66,6 +66,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2017-07-20T18:56:37-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
+			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -80,11 +81,12 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-11-16T22:04:41-0600"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
+			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
 				<li>New <ao:a href="https://aoindustries.com/ao-oss-parent/">AO OSS Parent</ao:a> POM to simplify <code>pom.xml</code> files.</li>
-				<li>Project documentation moved to per-project book in <core:link book="/" page="/index.jspx" /> format.</li>
+				<li>Project documentation moved to per-project book in <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> format.</li>
 				<li>Added changelog as top-level project link.</li>
 				<li>
 					Taglib tlib-version is now set automatically during build.
@@ -101,6 +103,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-10-20T20:15:16-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
+			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -115,6 +118,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-10-04T23:47:48-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
+			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -132,6 +136,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-09-11T17:49:40-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
+			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -146,6 +151,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-09-03T11:33:03-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
+			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -160,6 +166,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-08-30T17:37:52-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
+			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
