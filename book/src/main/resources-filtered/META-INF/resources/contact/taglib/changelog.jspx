@@ -37,6 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T20:56:44-0500"
+		dateModified="2017-07-26T13:44:56-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.pragmatickm:pragmatickm-contact-taglib:pom.version}" />
@@ -58,5 +59,113 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 				</ul>
 			</changelog:release>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.3.3"
+			datePublished="2017-07-20T18:56:37-0500"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>New release for bug fixes in underlying <ao:a href="https://aoindustries.com/ao-encoding/">AO Encoding</ao:a> library.</li>
+				<li>Updated dependencies.</li>
+			</ul>
+		</changelog:release>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.3.2"
+			datePublished="2016-11-16T22:04:41-0600"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>New <ao:a href="https://aoindustries.com/ao-oss-parent/">AO OSS Parent</ao:a> POM to simplify <code>pom.xml</code> files.</li>
+				<li>Project documentation moved to per-project book in <core:link book="/" page="/index.jspx" /> format.</li>
+				<li>Added changelog as top-level project link.</li>
+				<li>
+					Taglib tlib-version is now set automatically during build.
+					Unfortunately, we cannot include "-SNAPSHOT" on snapshot builds due to the requirement of "Dewey decimal"
+					for taglib versions.  The unambiguous full version is annotated via comment.
+				</li>
+				<li>Taglib URLs now match project URLs.</li>
+			</ul>
+		</changelog:release>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.3.1"
+			datePublished="2016-10-20T20:15:16-0500"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>Improved Javadoc formatting.</li>
+				<li>Improved README formatting.</li>
+			</ul>
+		</changelog:release>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.3.0"
+			datePublished="2016-10-04T23:47:48-0500"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>Improved Javadoc formatting.</li>
+				<li>Set rtexprvalue to false where seems reasonable to do so.</li>
+				<li>Newer taglib version to support deferred expressions.</li>
+				<li>Avoiding calling writeTo when capturing.</li>
+				<li>Attributes that take deferred expressions are now deferred-only.</li>
+			</ul>
+		</changelog:release>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.2"
+			datePublished="2016-09-11T17:49:40-0500"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>Use dependencyManagement instead of dependency for junit.</li>
+				<li>Parent POM changed so next release will update all versions.</li>
+			</ul>
+		</changelog:release>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.1"
+			datePublished="2016-09-03T11:33:03-0500"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>Using extensions.xml to avoid chicken/egg problem using ssh for private repositories.</li>
+				<li>Improved Maven configuration for Java EE 6 dependencies.</li>
+			</ul>
+		</changelog:release>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.0"
+			datePublished="2016-08-30T17:37:52-0500"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>Pulled contacts out of docs-taglib.</li>
+				<li>Added modules.</li>
+			</ul>
+		</changelog:release>
 	</core:page>
 </jsp:root>
