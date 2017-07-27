@@ -87,7 +87,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 								<artifactItem>
 									<groupId>com.pragmatickm</groupId>
 									<artifactId>pragmatickm-contact-taglib</artifactId>
-									<version>1.3.4-SNAPSHOT</version>
+									<version>1.3.4</version>
 									<type>jar</type>
 									<includes>META-INF/pragmatickm-contact.tld</includes>
 								</artifactItem>
@@ -229,7 +229,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<dependency>
 			<groupId>com.pragmatickm</groupId>
 			<artifactId>pragmatickm-contact-taglib</artifactId>
-			<version>1.3.4-SNAPSHOT</version>
+			<version>1.3.4</version>
 			<type>pom</type>
 			<scope>provided</scope>
 			<optional>true</optional>
