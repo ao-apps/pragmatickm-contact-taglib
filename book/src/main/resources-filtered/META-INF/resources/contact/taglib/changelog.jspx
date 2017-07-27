@@ -61,7 +61,6 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2017-07-27T00:24:57-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
