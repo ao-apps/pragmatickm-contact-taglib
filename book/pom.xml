@@ -27,7 +27,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	<parent>
 		<groupId>com.pragmatickm</groupId>
 		<artifactId>pragmatickm-parent</artifactId>
-		<version>1.0.2-SNAPSHOT</version>
+		<version>1.0.2</version>
 		<relativePath>../../../parent/pom.xml</relativePath>
 	</parent>
 
