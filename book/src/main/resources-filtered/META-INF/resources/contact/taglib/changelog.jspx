@@ -37,7 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T20:56:44-0500"
-		dateModified="2017-07-27T00:24:57-0500"
+		dateModified="2017-07-27T20:46:54-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.pragmatickm:pragmatickm-contact-taglib:pom.version}" />
@@ -52,7 +52,11 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 				groupId="@{documented.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{documented.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Improved formatting and linking of <core:link page="pragmatickm-contact.tld/" />.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release

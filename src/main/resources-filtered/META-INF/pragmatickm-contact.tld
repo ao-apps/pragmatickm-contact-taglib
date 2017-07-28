@@ -37,17 +37,17 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	<uri>@{project.url}</uri>
 	<tag>
 		<description><![CDATA[
-			<p>
+			<p class="semanticcms-tag-reference-summary">
 				A set of contact information.
 			</p>
 			<p>
-				Phone numbers may be added with nested &lt;d:phone&gt; tags.
+				Phone numbers may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-phone">&lt;contact:phone&gt;</a> tags.
 			</p>
 			<p>
-				Addresses may be added with nested &lt;d:address&gt; tags.
+				Addresses may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-address">&lt;contact:address&gt;</a> tags.
 			</p>
 			<p>
-				Websites may be added with nested &lt;d:webPage&gt; tags.
+				Websites may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-webPage">&lt;contact:webPage&gt;</a> tags.
 			</p>
 			<p>
 				Any HTML in the body is displayed in the detailed comments area.
@@ -58,8 +58,10 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<body-content>scriptless</body-content>
 		<attribute>
 			<description><![CDATA[
-				<p>
+				<p class="semanticcms-tag-reference-summary">
 					The id used in URL anchors.
+				</p>
+				<p>
 					If not provided, is generated from the name.
 					Must be unique per page.
 					Ids generated from names will be unique, but may change as page structure changes.
@@ -183,9 +185,11 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				<p>
+				<p class="semanticcms-tag-reference-summary">
 					Email address.
-					Email addresses may also be provided with nested &lt;d:email&gt; tags.
+				</p>
+				<p>
+					Email addresses may also be provided with nested <a href="@{project.url}pragmatickm-contact.tld/tag-email">&lt;contact:email&gt;</a> tags.
 				</p>
 			]]></description>
 			<name>email</name>
@@ -196,9 +200,11 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				<p>
+				<p class="semanticcms-tag-reference-summary">
 					URL of their web page.
-					Web pages may also be provided with nested &lt;d:webPage&gt; tags.
+				</p>
+				<p>
+					Web pages may also be provided with nested <a href="@{project.url}pragmatickm-contact.tld/tag-webPage">&lt;contact:webPage&gt;</a> tags.
 				</p>
 			]]></description>
 			<name>webPage</name>
@@ -211,9 +217,11 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			<p>
+			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of addresses.
-				Must be nested inside a &lt;d:contact&gt; tag.
+			</p>
+			<p>
+				Must be nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag.
 			</p>
 		]]></description>
 		<name>address</name>
@@ -304,9 +312,11 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			<p>
+			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of email addresses.
-				When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+			</p>
+			<p>
+				When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
 				Otherwise, will write the email address as a link inline.
 			</p>
 		]]></description>
@@ -326,9 +336,11 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			<p>
+			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of phone numbers.
-				When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+			</p>
+			<p>
+				When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
 				Otherwise, will write the phone number inline.
 			</p>
 		]]></description>
@@ -368,9 +380,11 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			<p>
+			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of instant messaging handles.
-				When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+			</p>
+			<p>
+				When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
 				Otherwise, will write the instant messaging handle inline.
 			</p>
 		]]></description>
@@ -410,9 +424,11 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</tag>
 	<tag>
 		<description><![CDATA[
-			<p>
+			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of web pages.
-				When nested inside a &lt;d:contact&gt; tag, will be written as part of overall contact.
+			</p>
+			<p>
+				When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
 				Otherwise, will write the link to the web page inline.
 			</p>
 		]]></description>
