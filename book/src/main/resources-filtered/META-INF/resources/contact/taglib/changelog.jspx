@@ -79,7 +79,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2017-07-20T18:56:37-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
+			repository="https://aorepo.org/maven2/"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -94,7 +94,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-11-16T22:04:41-0600"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
+			repository="https://aorepo.org/maven2/"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -116,7 +116,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-10-20T20:15:16-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
+			repository="https://aorepo.org/maven2/"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -131,7 +131,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-10-04T23:47:48-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
+			repository="https://aorepo.org/maven2/"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -149,7 +149,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-09-11T17:49:40-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
+			repository="https://aorepo.org/maven2/"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -164,7 +164,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-09-03T11:33:03-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
+			repository="https://aorepo.org/maven2/"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
@@ -179,7 +179,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			datePublished="2016-08-30T17:37:52-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
+			repository="https://aorepo.org/maven2/"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>
