@@ -27,7 +27,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	<parent>
 		<groupId>com.pragmatickm</groupId>
 		<artifactId>pragmatickm-parent</artifactId>
-		<version>1.0.2</version>
+		<version>1.0.3-validation-SNAPSHOT</version>
 		<relativePath>../../parent/pom.xml</relativePath>
 	</parent>
 
@@ -157,7 +157,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-core-taglib</artifactId>
-			<version>1.9.0</version>
+			<version>1.9.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
