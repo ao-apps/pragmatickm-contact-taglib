@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,8 @@ import com.pragmatickm.contact.model.Address;
 import com.pragmatickm.contact.model.AddressType;
 import com.pragmatickm.contact.model.Contact;
 import com.semanticcms.core.model.Node;
-import com.semanticcms.core.servlet.CaptureLevel;
+import com.semanticcms.core.pages.CaptureLevel;
+import com.semanticcms.core.servlet.CurrentCaptureLevel;
 import com.semanticcms.core.servlet.CurrentNode;
 import java.io.IOException;
 import java.util.Locale;
@@ -87,7 +88,7 @@ public class AddressTag extends SimpleTagSupport {
 		final ServletRequest request = pageContext.getRequest();
 
 		// Get the current capture state
-		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
+		final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
 		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
 			final Node currentNode = CurrentNode.getCurrentNode(request);
 			if(!(currentNode instanceof Contact)) throw new JspTagException("<address> must be nested in <contact>");

@@ -30,7 +30,7 @@ import com.aoindustries.validation.ValidationException;
 import com.pragmatickm.contact.model.Contact;
 import com.pragmatickm.contact.servlet.impl.ContactImpl;
 import com.semanticcms.core.model.ElementContext;
-import com.semanticcms.core.servlet.CaptureLevel;
+import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.servlet.PageIndex;
 import com.semanticcms.core.taglib.ElementTag;
 import java.io.IOException;

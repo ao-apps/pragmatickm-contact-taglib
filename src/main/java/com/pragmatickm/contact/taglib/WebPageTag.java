@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,7 +31,8 @@ import com.semanticcms.core.model.ElementWriter;
 import com.semanticcms.core.model.Node;
 import com.semanticcms.core.model.NodeBodyWriter;
 import com.semanticcms.core.model.Page;
-import com.semanticcms.core.servlet.CaptureLevel;
+import com.semanticcms.core.pages.CaptureLevel;
+import com.semanticcms.core.servlet.CurrentCaptureLevel;
 import com.semanticcms.core.servlet.CurrentNode;
 import com.semanticcms.core.servlet.CurrentPage;
 import com.semanticcms.core.taglib.PageElementContext;
@@ -59,7 +60,7 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 		final ServletRequest request = pageContext.getRequest();
 
 		// Get the current capture state
-		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
+		final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
 		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
 			// Evaluate expressions
 			hrefStr = resolveValue(href, String.class, pageContext.getELContext());

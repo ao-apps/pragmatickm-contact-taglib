@@ -33,7 +33,8 @@ import com.semanticcms.core.model.ElementWriter;
 import com.semanticcms.core.model.Node;
 import com.semanticcms.core.model.NodeBodyWriter;
 import com.semanticcms.core.model.Page;
-import com.semanticcms.core.servlet.CaptureLevel;
+import com.semanticcms.core.pages.CaptureLevel;
+import com.semanticcms.core.servlet.CurrentCaptureLevel;
 import com.semanticcms.core.servlet.CurrentNode;
 import com.semanticcms.core.servlet.CurrentPage;
 import com.semanticcms.core.taglib.PageElementContext;
@@ -61,7 +62,7 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
 		final ServletRequest request = pageContext.getRequest();
 
 		// Get the current capture state
-		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
+		final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
 		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
 			// Evaluate expressions
 			try {
