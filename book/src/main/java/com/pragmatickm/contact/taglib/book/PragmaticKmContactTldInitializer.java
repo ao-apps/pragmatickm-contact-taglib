@@ -22,6 +22,10 @@
  */
 package com.pragmatickm.contact.taglib.book;
 
+import com.aoindustries.net.Path;
+import com.aoindustries.validation.ValidationException;
+import com.semanticcms.core.model.BookRef;
+import com.semanticcms.core.model.ResourceRef;
 import com.semanticcms.tagreference.TagReferenceInitializer;
 import java.util.Collections;
 
@@ -30,13 +34,17 @@ import java.util.Collections;
  */
 public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 
-	public PragmaticKmContactTldInitializer() {
+	public PragmaticKmContactTldInitializer() throws ValidationException {
 		super(
 			"Contact Taglib Reference",
 			"Taglib Reference",
-			"pragmatickm.com",
-			"/contact/taglib",
-			"/pragmatickm-contact.tld",
+			new ResourceRef(
+				new BookRef(
+					"pragmatickm.com",
+					Path.valueOf("/contact/taglib")
+				),
+				Path.valueOf("/pragmatickm-contact.tld")
+			),
 			Maven.properties.getProperty("javac.link.javaApi.jdk16"),
 			Maven.properties.getProperty("javac.link.javaeeApi.6"),
 			Collections.singletonMap("com.pragmatickm.contact.taglib.", Maven.properties.getProperty("documented.url") + "apidocs/")
