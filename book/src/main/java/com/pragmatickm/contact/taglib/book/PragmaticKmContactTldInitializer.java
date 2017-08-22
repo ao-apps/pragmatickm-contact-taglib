@@ -22,6 +22,7 @@
  */
 package com.pragmatickm.contact.taglib.book;
 
+import com.aoindustries.net.DomainName;
 import com.aoindustries.net.Path;
 import com.aoindustries.validation.ValidationException;
 import com.semanticcms.core.model.BookRef;
@@ -40,7 +41,7 @@ public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 			"Taglib Reference",
 			new ResourceRef(
 				new BookRef(
-					"pragmatickm.com",
+					DomainName.valueOf("pragmatickm.com"),
 					Path.valueOf("/contact/taglib")
 				),
 				Path.valueOf("/pragmatickm-contact.tld")
