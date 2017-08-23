@@ -28,7 +28,7 @@ import com.pragmatickm.contact.model.AddressType;
 import com.pragmatickm.contact.model.Contact;
 import com.semanticcms.core.model.Node;
 import com.semanticcms.core.pages.CaptureLevel;
-import com.semanticcms.core.servlet.CurrentCaptureLevel;
+import com.semanticcms.core.pages.local.CurrentCaptureLevel;
 import com.semanticcms.core.servlet.CurrentNode;
 import java.io.IOException;
 import java.util.Locale;
