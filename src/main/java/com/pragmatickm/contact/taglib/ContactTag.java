@@ -28,10 +28,10 @@ import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.aoindustries.util.StringUtility;
 import com.aoindustries.validation.ValidationException;
 import com.pragmatickm.contact.model.Contact;
-import com.pragmatickm.contact.servlet.impl.ContactImpl;
+import com.pragmatickm.contact.renderer.html.ContactHtmlRenderer;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
-import com.semanticcms.core.servlet.PageIndex;
+import com.semanticcms.core.renderer.html.PageIndex;
 import com.semanticcms.core.taglib.ElementTag;
 import java.io.IOException;
 import java.io.Writer;
@@ -151,6 +151,6 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		ContactImpl.writeContactTable(pageIndex, out, context, styleObj, getElement());
+		ContactHtmlRenderer.writeContactTable(pageIndex, out, context, styleObj, getElement());
 	}
 }
