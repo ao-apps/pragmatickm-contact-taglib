@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2016, 2017  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -45,7 +45,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<javadoc.taglibReference><![CDATA[<li><a target="_top" href="${project.url}pragmatickm-contact.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 	</properties>
 
-	<name>PragmaticKM Contact Taglib</name>
+	<name>PragmaticKM 1 Contact Taglib</name>
 	<url>https://pragmatickm.com/contact/taglib/</url>
 	<description>Contacts nested within SemanticCMS pages and elements in a JSP environment.</description>
 	<inceptionYear>2013</inceptionYear>
