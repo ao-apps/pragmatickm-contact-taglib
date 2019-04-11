@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2016, 2017, 2019  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2018, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -58,29 +58,27 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<profile>
 			<id>release</id>
 			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
-							<configuration>
-								<links>
-									<link>${javac.link.javaApi}</link>
-									<link>${javac.link.javaeeApi.6}</link>
-									<link>https://aoindustries.com/ao-encoding/apidocs/</link>
-									<link>https://aoindustries.com/ao-lang/apidocs/</link>
-									<link>https://aoindustries.com/ao-net-types/apidocs/</link>
-									<link>https://aoindustries.com/ao-taglib/apidocs/</link>
-									<link>https://aoindustries.com/aocode-public/apidocs/</link>
-									<link>https://pragmatickm.com/contact/model/apidocs/</link>
-									<link>https://pragmatickm.com/contact/servlet/apidocs/</link>
-									<link>https://semanticcms.com/core/model/apidocs/</link>
-									<link>https://semanticcms.com/core/servlet/apidocs/</link>
-									<link>https://semanticcms.com/core/taglib/apidocs/</link>
-								</links>
-							</configuration>
-						</plugin>
-					</plugins>
-				</pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<links>
+								<link>${javac.link.javaApi}</link>
+								<link>${javac.link.javaeeApi.6}</link>
+								<link>https://aoindustries.com/ao-encoding/apidocs</link>
+								<link>https://aoindustries.com/ao-lang/apidocs</link>
+								<link>https://aoindustries.com/ao-net-types/apidocs</link>
+								<link>https://aoindustries.com/ao-taglib/apidocs</link>
+								<link>https://aoindustries.com/aocode-public/apidocs</link>
+								<link>https://pragmatickm.com/contact/model/apidocs</link>
+								<link>https://pragmatickm.com/contact/servlet/apidocs</link>
+								<link>https://semanticcms.com/core/model/apidocs</link>
+								<link>https://semanticcms.com/core/servlet/apidocs</link>
+								<link>https://semanticcms.com/core/taglib/apidocs</link>
+							</links>
+						</configuration>
+					</plugin>
+				</plugins>
 			</build>
 		</profile>
 	</profiles>
