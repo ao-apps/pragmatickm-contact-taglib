@@ -1,4 +1,4 @@
-# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://aoindustries.com/) [PragmaticKM](https://pragmatickm.com/) / [Contact](https://pragmatickm.com/contact/) / [Taglib](https://pragmatickm.com/contact/taglib/)
+# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/aoindustries) [PragmaticKM](https://github.com/aoindustries/pragmatickm) / [Contact](https://github.com/aoindustries/pragmatickm-contact) / [Taglib](https://github.com/aoindustries/pragmatickm-contact-taglib)
 <p>
 	<a href="https://aoindustries.com/life-cycle#project-current-stable">
 		<img src="https://pragmatickm.com/ao-badges/project-current-stable.svg" alt="project: current stable" />
@@ -24,7 +24,7 @@
 	</a>
 </p>
 
-Contacts nested within [SemanticCMS](https://semanticcms.com/) pages and elements in a JSP environment.
+Contacts nested within [SemanticCMS](https://github.com/aoindustries/semanticcms) pages and elements in a JSP environment.
 
 ## Project Links
 * [Project Home](https://pragmatickm.com/contact/taglib/)
