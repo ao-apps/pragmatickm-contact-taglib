@@ -34,8 +34,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 
 	<properties>
 		<!-- These values are copied from the project being documented -->
-		<documented.groupId>com.pragmatickm</documented.groupId>
-		<documented.artifactId>pragmatickm-contact-taglib</documented.artifactId>
+		<documented.groupId>com.pragmatickm</documented.groupId><documented.artifactId>pragmatickm-contact-taglib</documented.artifactId>
 		<documented.javaVersion>1.6</documented.javaVersion>
 		<documented.javac.link.javaApi>${javac.link.javaApi.jdk16}</documented.javac.link.javaApi>
 		<documented.name>PragmaticKM 1 Contact Taglib</documented.name>
