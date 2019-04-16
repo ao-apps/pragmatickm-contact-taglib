@@ -33,7 +33,7 @@ public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 			"Taglib Reference",
 			"/contact/taglib",
 			"/pragmatickm-contact.tld",
-			Maven.properties.getProperty("javac.link.javaApi.jdk7"),
+			Maven.properties.getProperty("documented.javac.link.javaApi"),
 			Maven.properties.getProperty("javac.link.javaeeApi.6"),
 			Collections.singletonMap("com.pragmatickm.contact.taglib.", Maven.properties.getProperty("documented.url") + "apidocs/")
 		);
