@@ -124,7 +124,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.12.1-validation-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.9.1-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.10.1-validation-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
