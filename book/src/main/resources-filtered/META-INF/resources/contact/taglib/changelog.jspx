@@ -54,6 +54,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 				scmUrl="@{documented.scm.url}"
 			>
 				<ul>
+					<!-- TODO: <li>Minimum Java version changed from 1.6 to 1.7.</li>-->
 					<li>Improved formatting and linking of <core:link page="pragmatickm-contact.tld/" />.</li>
 				</ul>
 			</changelog:release>
