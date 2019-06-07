@@ -37,7 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<documented.groupId>com.pragmatickm</documented.groupId><documented.artifactId>pragmatickm-contact-taglib</documented.artifactId>
 		<documented.javaVersion>1.7</documented.javaVersion>
 		<documented.javac.link.javaApi>${javac.link.javaApi.jdk7}</documented.javac.link.javaApi>
-		<documented.name>PragmaticKM 2 Contact Taglib</documented.name>
+		<documented.name>PragmaticKM Contact Taglib²</documented.name>
 		<documented.shortTitle>Taglib</documented.shortTitle>
 		<documented.url>https://pragmatickm.com/contact/taglib/</documented.url>
 		<documented.description>Contacts nested within SemanticCMS pages and elements in a JSP environment.</documented.description>
@@ -195,7 +195,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>2.1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.0-validation-SNAPSHOT</version>
+			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId><artifactId>semanticcms-changelog-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
