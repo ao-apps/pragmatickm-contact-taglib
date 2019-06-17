@@ -39,5 +39,4 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		datePublished="2017-07-25T20:56:44-0500"
 		dateModified="${ao:getLastModified('index.html')}"
 	/>
-	<!-- TODO: Pick-up javadocs version, not pom version, in title, here and elsewhere -->
 </jsp:root>
