@@ -36,7 +36,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T20:56:44-0500"
-		dateModified="2019-10-12T05:57:40-0500"
+		dateModified="2019-11-02T16:41:06-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.pragmatickm:pragmatickm-contact-taglib:pom.version}" />
@@ -54,6 +54,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			>
 				<ul>
 					<li>Updated for <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> 2.</li>
+					<li>Minimum Java version changed from 1.7 to 1.8.</li>
 				</ul>
 			</changelog:release>
 		</c:if>
