@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2015, 2016, 2017  AO Industries, Inc.
+ * Copyright (C) 2015, 2016, 2017, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,8 @@
 package com.pragmatickm.contact.taglib;
 
 import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
-import static com.aoindustries.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
+import com.aoindustries.html.Html;
+import com.aoindustries.html.servlet.HtmlEE;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Contact;
 import com.pragmatickm.contact.model.Im;
@@ -43,6 +44,7 @@ import java.util.Locale;
 import javax.el.ELContext;
 import javax.el.ValueExpression;
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
@@ -123,10 +125,12 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		out.write("<span class=\"");
-		encodeTextInXhtmlAttribute(newIm.getType().getCssClass(), out);
-		out.write("\">");
-		encodeTextInXhtml(newIm.getHandle(), out);
-		out.write("</span>");
+		PageContext pageContext = (PageContext)getJspContext();
+		Html html = HtmlEE.get(pageContext.getServletContext(), (HttpServletRequest)pageContext.getRequest(), out);
+		html.out.write("<span class=\"");
+		encodeTextInXhtmlAttribute(newIm.getType().getCssClass(), html.out);
+		html.out.write("\">");
+		html.text(newIm.getHandle());
+		html.out.write("</span>");
 	}
 }
