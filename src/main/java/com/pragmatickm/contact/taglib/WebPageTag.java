@@ -22,9 +22,12 @@
  */
 package com.pragmatickm.contact.taglib;
 
+import com.aoindustries.encoding.Doctype;
+import com.aoindustries.encoding.Serialization;
 import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
+import com.aoindustries.encoding.servlet.DoctypeEE;
+import com.aoindustries.encoding.servlet.SerializationEE;
 import com.aoindustries.html.Html;
-import com.aoindustries.html.servlet.HtmlEE;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Contact;
 import com.semanticcms.core.model.ElementContext;
@@ -39,7 +42,7 @@ import com.semanticcms.core.taglib.PageElementContext;
 import java.io.IOException;
 import java.io.Writer;
 import javax.el.ValueExpression;
-import javax.servlet.ServletRequest;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.JspWriter;
@@ -54,11 +57,13 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
     }
 
 	private String hrefStr;
+	private Serialization serialization;
+	private Doctype doctype;
 
 	@Override
     public void doTag() throws JspTagException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
-		final ServletRequest request = pageContext.getRequest();
+		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 
 		// Get the current capture state
 		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
@@ -71,6 +76,10 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 				Contact currentContact = (Contact)node;
 				currentContact.addWebPage(hrefStr);
 			} else {
+				ServletContext servletContext = pageContext.getServletContext();
+				serialization = SerializationEE.get(servletContext, request);
+				doctype = DoctypeEE.get(servletContext, request);
+
 				JspWriter out = pageContext.getOut();
 				if(node == null) {
 					// Write now
@@ -102,8 +111,7 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		PageContext pageContext = (PageContext)getJspContext();
-		Html html = HtmlEE.get(pageContext.getServletContext(), (HttpServletRequest)pageContext.getRequest(), out);
+		Html html = new Html(serialization, doctype, out);
 		html.out.write("<span class=\"contact_web_page\"><a href=\"");
 		encodeTextInXhtmlAttribute(hrefStr, html.out);
 		html.out.write("\">");
