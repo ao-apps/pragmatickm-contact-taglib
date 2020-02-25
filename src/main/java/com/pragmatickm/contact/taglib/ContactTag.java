@@ -23,7 +23,11 @@
 package com.pragmatickm.contact.taglib;
 
 import com.aoindustries.encoding.Coercion;
-import com.aoindustries.html.servlet.HtmlEE;
+import com.aoindustries.encoding.Doctype;
+import com.aoindustries.encoding.Serialization;
+import com.aoindustries.encoding.servlet.DoctypeEE;
+import com.aoindustries.encoding.servlet.SerializationEE;
+import com.aoindustries.html.Html;
 import com.aoindustries.net.Email;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.aoindustries.util.StringUtility;
@@ -38,6 +42,7 @@ import java.io.IOException;
 import java.io.Writer;
 import javax.el.ELContext;
 import javax.el.ValueExpression;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
@@ -140,23 +145,28 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
 
 	private PageIndex pageIndex;
 	private Object styleObj;
+	private Serialization serialization;
+	private Doctype doctype;
 
 	@Override
 	protected void doBody(Contact contact, CaptureLevel captureLevel) throws JspException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
 		if(captureLevel == CaptureLevel.BODY) {
+			ServletContext servletContext = pageContext.getServletContext();
+			HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 			pageIndex = PageIndex.getCurrentPageIndex(pageContext.getRequest());
 			styleObj = Coercion.nullIfEmpty(resolveValue(style, Object.class, pageContext.getELContext()));
+			serialization = SerializationEE.get(servletContext, request);
+			doctype = DoctypeEE.get(servletContext, request);
 		}
 		super.doBody(contact, captureLevel);
 	}
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		PageContext pageContext = (PageContext)getJspContext();
 		ContactHtmlRenderer.writeContactTable(
 			pageIndex,
-			HtmlEE.get(pageContext.getServletContext(), (HttpServletRequest)pageContext.getRequest(), out),
+			new Html(serialization, doctype, out),
 			context,
 			styleObj,
 			getElement()
