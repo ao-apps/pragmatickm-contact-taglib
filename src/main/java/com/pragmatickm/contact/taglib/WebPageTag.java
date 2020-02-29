@@ -113,7 +113,7 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		Html html = new Html(serialization, doctype, out);
-		html.out.write("<span class=\"contact_web_page\"><a href=\"");
+		html.out.write("<span class=\"pragmatickm-contact-web-page\"><a href=\"");
 		encodeTextInXhtmlAttribute(hrefStr, html.out);
 		html.out.write("\">");
 		html.text(hrefStr);

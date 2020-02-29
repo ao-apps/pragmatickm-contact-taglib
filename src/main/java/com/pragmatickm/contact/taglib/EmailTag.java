@@ -119,7 +119,7 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		Html html = new Html(serialization, doctype, out);
-		html.out.write("<span class=\"contact_email_address\"><a href=\"mailto:");
+		html.out.write("<span class=\"pragmatickm-contact-email\"><a href=\"mailto:");
 		String emailString = email.toString();
 		encodeTextInXhtmlAttribute(emailString, html.out);
 		html.out.write("\">");
