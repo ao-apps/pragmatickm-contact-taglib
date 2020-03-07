@@ -35,8 +35,6 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	<properties>
 		<!-- These values are copied from the project being documented -->
 		<documented.artifactId>pragmatickm-contact-taglib</documented.artifactId>
-		<documented.javaVersion>1.8</documented.javaVersion>
-		<documented.javac.link.javaApi>${javac.link.javaApi.jdk8}</documented.javac.link.javaApi>
 		<documented.name>PragmaticKM Contact Taglib</documented.name>
 		<documented.shortTitle>Taglib</documented.shortTitle>
 		<documented.description>Contacts nested within SemanticCMS pages and elements in a JSP environment.</documented.description>
