@@ -30,7 +30,7 @@ import com.aoindustries.encoding.servlet.SerializationEE;
 import com.aoindustries.html.Html;
 import com.aoindustries.net.Email;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
-import com.aoindustries.util.StringUtility;
+import com.aoindustries.lang.Strings;
 import com.aoindustries.validation.ValidationException;
 import com.pragmatickm.contact.model.Contact;
 import com.pragmatickm.contact.renderer.html.ContactHtmlRenderer;
@@ -134,9 +134,9 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
 			element.setCompany(resolveValue(company, String.class, elContext));
 			element.setDepartment(resolveValue(department, String.class, elContext));
 			element.setJobTitle(resolveValue(jobTitle, String.class, elContext));
-			String emailStr = StringUtility.nullIfEmpty(resolveValue(email, String.class, elContext));
+			String emailStr = Strings.nullIfEmpty(resolveValue(email, String.class, elContext));
 			if(emailStr != null) element.addEmail(Email.valueOf(emailStr));
-			String webPageStr = StringUtility.nullIfEmpty(resolveValue(webPage, String.class, elContext));
+			String webPageStr = Strings.nullIfEmpty(resolveValue(webPage, String.class, elContext));
 			if(webPageStr != null) element.addWebPage(webPageStr);
 		} catch(ValidationException e) {
 			throw new JspTagException(e);
