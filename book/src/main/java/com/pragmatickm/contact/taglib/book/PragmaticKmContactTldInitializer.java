@@ -34,7 +34,7 @@ public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 			"/contact/taglib",
 			"/pragmatickm-contact.tld",
 			Maven.properties.getProperty("documented.javadoc.link.javase"),
-			Maven.properties.getProperty("javadoc.link.javaee.6"),
+			Maven.properties.getProperty("documented.javadoc.link.javaee"),
 			Collections.singletonMap("com.pragmatickm.contact.taglib.", Maven.properties.getProperty("project.url") + "apidocs/")
 		);
 	}
