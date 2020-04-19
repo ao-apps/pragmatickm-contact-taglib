@@ -33,12 +33,12 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	<packaging>bundle</packaging>
 
 	<properties>
-		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="https://pragmatickm.com/">PragmaticKM</a>
-/ <a target="_top" href="https://pragmatickm.com/contact/">Contact</a>
-/ <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
+		<javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://pragmatickm.com/">PragmaticKM</a>
+/ <a target="${javadoc.target}" href="https://pragmatickm.com/contact/">Contact</a>
+/ <a target="${javadoc.target}" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 		<shortTitle>Taglib</shortTitle>
-		<description.html><![CDATA[Contacts nested within <a target="_top" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a JSP environment.]]></description.html>
-		<javadoc.taglibReference><![CDATA[<li><a target="_top" href="${project.url}pragmatickm-contact.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
+		<description.html><![CDATA[Contacts nested within <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a JSP environment.]]></description.html>
+		<javadoc.taglibReference><![CDATA[<li><a target="${javadoc.target}" href="${project.url}pragmatickm-contact.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 	</properties>
 
 	<name>PragmaticKM Contact Taglib²</name>
