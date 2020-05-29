@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2017, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,7 +35,8 @@ public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 			"/pragmatickm-contact.tld",
 			Maven.properties.getProperty("documented.javadoc.link.javase"),
 			Maven.properties.getProperty("documented.javadoc.link.javaee"),
-			Collections.singletonMap("com.pragmatickm.contact.taglib.", Maven.properties.getProperty("project.url") + "apidocs/")
+			// Self
+			Collections.singletonMap("com.pragmatickm.contact.taglib", Maven.properties.getProperty("project.url") + "apidocs/")
 		);
 	}
 }
