@@ -43,6 +43,7 @@ public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 				),
 				Path.valueOf("/pragmatickm-contact.tld")
 			),
+			true,
 			Maven.properties.getProperty("documented.javadoc.link.javase"),
 			Maven.properties.getProperty("documented.javadoc.link.javaee"),
 			// Self
