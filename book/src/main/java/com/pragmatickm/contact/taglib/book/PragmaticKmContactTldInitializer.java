@@ -34,7 +34,7 @@ public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 
 	public PragmaticKmContactTldInitializer() throws ValidationException {
 		super(
-			"Contact Taglib Reference",
+			Maven.properties.getProperty("project.name") + " Reference",
 			"Taglib Reference",
 			new ResourceRef(
 				new BookRef(
