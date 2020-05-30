@@ -29,7 +29,7 @@ public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 
 	public PragmaticKmContactTldInitializer() {
 		super(
-			"Contact Taglib Reference",
+			Maven.properties.getProperty("project.name") + " Reference",
 			"Taglib Reference",
 			"/contact/taglib",
 			"/pragmatickm-contact.tld",
