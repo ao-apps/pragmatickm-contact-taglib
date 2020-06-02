@@ -65,13 +65,22 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId>
+						<dependencies>
+							<dependency>
+								<groupId>com.aoindustries</groupId><artifactId>ao-javadoc-offline</artifactId><version>1.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+							</dependency>
+						</dependencies>
 						<executions>
 							<execution>
-								<id>unpack.offlinkLinks</id>
-								<phase>generate-sources</phase>
-								<goals><goal>unpack</goal></goals>
+								<id>unpack.offlinkLinks</id><phase>generate-sources</phase><goals><goal>unpack</goal></goals>
 								<configuration>
+									<silent>true</silent>
 									<artifactItems>
+										<artifactItem>
+											<groupId>com.aoindustries</groupId><artifactId>ao-javadoc-offline</artifactId><version>1.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+											<includes>**/element-list, **/package-list</includes>
+											<outputDirectory>${project.build.directory}/offlineLinks</outputDirectory>
+										</artifactItem>
 										<!-- Direct -->
 										<artifactItem>
 											<groupId>com.aoindustries</groupId><artifactId>ao-encoding</artifactId>
@@ -136,24 +145,16 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
 						<configuration>
-							<links>
-								<link>${javadoc.link.javase}</link>
-								<!-- Java EE -->
-								<link>${javadoc.link.javaee}</link>
-								<!-- Direct -->
-								<!-- offlineLink: <groupId>com.aoindustries</groupId><artifactId>ao-encoding</artifactId> -->
-								<!-- offlineLink: <groupId>com.aoindustries</groupId><artifactId>ao-encoding-servlet</artifactId> -->
-								<!-- offlineLink: <groupId>com.aoindustries</groupId><artifactId>ao-fluent-html</artifactId> -->
-								<!-- offlineLink: <groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId> -->
-								<!-- offlineLink: <groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId> -->
-								<!-- offlineLink: <groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId> -->
-								<!-- offlineLink: <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-model</artifactId> -->
-								<!-- offlineLink: <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-servlet</artifactId> -->
-								<!-- offlineLink: <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId> -->
-								<!-- offlineLink: <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId> -->
-								<!-- offlineLink: <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId> -->
-							</links>
 							<offlineLinks>
+								<offlineLink>
+									<url>${javadoc.link.javase}</url>
+									<location>${project.build.directory}/offlineLinks/com/aoindustries/javadoc/offline/javase/${javase.release}</location>
+								</offlineLink>
+								<!-- Java EE -->
+								<offlineLink>
+									<url>${javadoc.link.javaee}</url>
+									<location>${project.build.directory}/offlineLinks/com/aoindustries/javadoc/offline/javaee/${javaee.version}</location>
+								</offlineLink>
 								<!-- Direct -->
 								<offlineLink>
 									<url>https://aoindustries.com/ao-encoding/apidocs/</url>
