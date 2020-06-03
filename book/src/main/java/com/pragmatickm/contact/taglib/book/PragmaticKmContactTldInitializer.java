@@ -28,7 +28,6 @@ import com.aoindustries.validation.ValidationException;
 import com.semanticcms.core.model.BookRef;
 import com.semanticcms.core.model.ResourceRef;
 import com.semanticcms.tagreference.TagReferenceInitializer;
-import java.util.Collections;
 
 public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 
@@ -47,7 +46,7 @@ public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 			Maven.properties.getProperty("documented.javadoc.link.javase"),
 			Maven.properties.getProperty("documented.javadoc.link.javaee"),
 			// Self
-			Collections.singletonMap("com.pragmatickm.contact.taglib", Maven.properties.getProperty("project.url") + "apidocs/")
+			"com.pragmatickm.contact.taglib", Maven.properties.getProperty("project.url") + "apidocs/"
 		);
 	}
 }
