@@ -47,6 +47,7 @@ import java.io.Writer;
 import javax.el.ValueExpression;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
@@ -64,7 +65,7 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
 	private Doctype doctype;
 
 	@Override
-    public void doTag() throws JspTagException, IOException {
+    public void doTag() throws JspException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
 		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 
