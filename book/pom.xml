@@ -105,10 +105,6 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 						<dependency>com.aoindustries:ao-mime-mappings</dependency>
 						<dependency>org.glassfish.web:jstl-impl</dependency>
 					</usedDependencies>
-					<ignoredUnusedDeclaredDependencies>
-						<!-- Dependency for dependencyversion-maven-plugin only -->
-						<dependency>com.pragmatickm:pragmatickm-contact-taglib:pom</dependency>
-					</ignoredUnusedDeclaredDependencies>
 				</configuration>
 				<executions>
 					<!-- Add a copy of the taglib files from dependencies -->
@@ -156,7 +152,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 				<groupId>com.aoindustries</groupId><artifactId>ao-badges</artifactId><version>1.4.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.8.0${POST-SNAPSHOT}</version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.9.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>6.1.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
@@ -319,14 +315,6 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<dependency>
 			<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-		<!-- Dependency for dependencyversion-maven-plugin only -->
-		<dependency>
-			<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>1.5.0-POST-SNAPSHOT</version>
-			<type>pom</type>
-			<scope>provided</scope>
-			<optional>true</optional>
-			<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
 		</dependency>
 	</dependencies>
 </project>
