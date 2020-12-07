@@ -121,6 +121,12 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 						</configuration>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>1.5.0${POST-SNAPSHOT}</version>
+						<type>jar</type>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-resources-plugin</artifactId>
