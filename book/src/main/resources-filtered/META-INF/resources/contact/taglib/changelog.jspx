@@ -39,16 +39,10 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		datePublished="2017-07-25T20:56:44-0500"
 		dateModified="2020-11-25T07:09:05-06:00"
 	>
-		<!-- The current snapshot, unreleased version -->
-		<c:set var="version" value="@{com.pragmatickm:pragmatickm-contact-taglib:pom.version}" />
-		<ao:assert
-			test="${!fn:startsWith(version, '@')}"
-			message="Version not substituted: #{version}"
-		/>
-		<c:if test="${fn:endsWith(version, '-SNAPSHOT') and !fn:endsWith(version, '-POST-SNAPSHOT')}">
+		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
 				projectName="@{documented.name}"
-				version="#{version}"
+				version="@{project.version}"
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
