@@ -26,7 +26,7 @@ import com.aoindustries.encoding.Doctype;
 import com.aoindustries.encoding.Serialization;
 import com.aoindustries.encoding.servlet.DoctypeEE;
 import com.aoindustries.encoding.servlet.SerializationEE;
-import com.aoindustries.html.Html;
+import com.aoindustries.html.Document;
 import com.aoindustries.lang.Coercion;
 import com.aoindustries.lang.Strings;
 import com.aoindustries.net.Email;
@@ -166,7 +166,7 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		ContactHtmlRenderer.writeContactTable(
 			pageIndex,
-			new Html(serialization, doctype, out),
+			new Document(serialization, doctype, out),
 			context,
 			styleObj,
 			getElement()
