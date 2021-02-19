@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2015, 2016, 2017, 2020  AO Industries, Inc.
+ * Copyright (C) 2015, 2016, 2017, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,7 @@ import com.aoindustries.encoding.Serialization;
 import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import com.aoindustries.encoding.servlet.DoctypeEE;
 import com.aoindustries.encoding.servlet.SerializationEE;
-import com.aoindustries.html.Html;
+import com.aoindustries.html.Document;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Contact;
 import com.pragmatickm.contact.model.Im;
@@ -134,11 +134,11 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		Html html = new Html(serialization, doctype, out);
-		html.out.write("<span class=\"");
-		encodeTextInXhtmlAttribute(newIm.getType().getCssClass(), html.out);
-		html.out.write("\">");
-		html.text(newIm.getHandle());
-		html.out.write("</span>");
+		Document document = new Document(serialization, doctype, out);
+		document.out.write("<span class=\"");
+		encodeTextInXhtmlAttribute(newIm.getType().getCssClass(), document.out);
+		document.out.write("\">");
+		document.text(newIm.getHandle());
+		document.out.write("</span>");
 	}
 }
