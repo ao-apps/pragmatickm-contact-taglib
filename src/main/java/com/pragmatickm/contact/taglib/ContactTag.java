@@ -164,12 +164,8 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		ContactHtmlRenderer.writeContactTable(
-			pageIndex,
-			new Document(serialization, doctype, out),
-			context,
-			styleObj,
-			getElement()
-		);
+		Document document = new Document(serialization, doctype, out);
+		document.setIndent(false); // Do not add extra indentation to JSP
+		ContactHtmlRenderer.writeContactTable(pageIndex, document, context, styleObj, getElement());
 	}
 }
