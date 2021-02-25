@@ -135,6 +135,7 @@ public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		Document document = new Document(serialization, doctype, out);
+		document.setIndent(false); // Do not add extra indentation to JSP
 		document.out.write("<span class=\"");
 		encodeTextInXhtmlAttribute(newPhoneNumber.getType().getCssClass(), document.out);
 		document.out.write("\">");

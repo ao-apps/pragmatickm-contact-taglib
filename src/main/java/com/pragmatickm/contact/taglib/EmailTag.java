@@ -24,7 +24,6 @@ package com.pragmatickm.contact.taglib;
 
 import com.aoindustries.encoding.Doctype;
 import com.aoindustries.encoding.Serialization;
-import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import com.aoindustries.encoding.servlet.DoctypeEE;
 import com.aoindustries.encoding.servlet.SerializationEE;
 import com.aoindustries.html.Document;
@@ -119,11 +118,8 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		Document document = new Document(serialization, doctype, out);
-		document.out.write("<span class=\"pragmatickm-contact-email\"><a href=\"mailto:");
+		document.setIndent(false); // Do not add extra indentation to JSP
 		String emailString = email.toString();
-		encodeTextInXhtmlAttribute(emailString, document.out);
-		document.out.write("\">");
-		document.text(emailString);
-		document.out.write("</a></span>");
+		document.out.write("<span class=\"pragmatickm-contact-email\">"); document.a("mailto:" + emailString).__(emailString).out.write("</span>");
 	}
 }

@@ -24,7 +24,6 @@ package com.pragmatickm.contact.taglib;
 
 import com.aoindustries.encoding.Doctype;
 import com.aoindustries.encoding.Serialization;
-import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import com.aoindustries.encoding.servlet.DoctypeEE;
 import com.aoindustries.encoding.servlet.SerializationEE;
 import com.aoindustries.html.Document;
@@ -112,10 +111,7 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		Document document = new Document(serialization, doctype, out);
-		document.out.write("<span class=\"pragmatickm-contact-web-page\"><a href=\"");
-		encodeTextInXhtmlAttribute(hrefStr, document.out);
-		document.out.write("\">");
-		document.text(hrefStr);
-		document.out.write("</a></span>");
+		document.setIndent(false); // Do not add extra indentation to JSP
+		document.out.write("<span class=\"pragmatickm-contact-web-page\">"); document.a(hrefStr).__(hrefStr).out.write("</a></span>");
 	}
 }
