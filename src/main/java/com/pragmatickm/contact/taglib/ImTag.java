@@ -24,7 +24,6 @@ package com.pragmatickm.contact.taglib;
 
 import com.aoindustries.encoding.Doctype;
 import com.aoindustries.encoding.Serialization;
-import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import com.aoindustries.encoding.servlet.DoctypeEE;
 import com.aoindustries.encoding.servlet.SerializationEE;
 import com.aoindustries.html.Document;
@@ -135,12 +134,8 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		Document document = new Document(serialization, doctype, out);
-		document.setIndent(false); // Do not add extra indentation to JSP
-		document.out.write("<span class=\"");
-		encodeTextInXhtmlAttribute(newIm.getType().getCssClass(), document.out);
-		document.out.write("\">");
-		document.text(newIm.getHandle());
-		document.out.write("</span>");
+		new Document(serialization, doctype, out)
+		.setIndent(false) // Do not add extra indentation to JSP
+		.span().clazz(newIm.getType().getCssClass()).__(newIm.getHandle());
 	}
 }

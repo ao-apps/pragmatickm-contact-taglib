@@ -118,9 +118,11 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		Document document = new Document(serialization, doctype, out);
-		document.setIndent(false); // Do not add extra indentation to JSP
 		String emailString = email.toString();
-		document.out.write("<span class=\"pragmatickm-contact-email\">"); document.a("mailto:" + emailString).__(emailString).out.write("</span>");
+		new Document(serialization, doctype, out)
+		.setIndent(false) // Do not add extra indentation to JSP
+		.span().clazz("pragmatickm-contact-email").__(span -> span
+			.a("mailto:" + emailString).__(emailString)
+		);
 	}
 }
