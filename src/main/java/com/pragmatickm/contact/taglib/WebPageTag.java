@@ -112,9 +112,10 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		new Document(serialization, doctype, out)
-		.setIndent(false) // Do not add extra indentation to JSP
-		.span().clazz("pragmatickm-contact-web-page").__(span -> span
-			.a(hrefStr).__(hrefStr)
-		);
+			.setAutonli(false) // Do not add extra newlines to JSP
+			.setIndent(false)  // Do not add extra indentation to JSP
+			.span().clazz("pragmatickm-contact-web-page").__(span -> span
+				.a(hrefStr).__(hrefStr)
+			);
 	}
 }
