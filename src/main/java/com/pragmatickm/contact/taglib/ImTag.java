@@ -134,7 +134,8 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
 		new Document(serialization, doctype, out)
-		.setIndent(false) // Do not add extra indentation to JSP
-		.span().clazz(newIm.getType().getCssClass()).__(newIm.getHandle());
+			.setAutonli(false) // Do not add extra newlines to JSP
+			.setIndent(false)  // Do not add extra indentation to JSP
+			.span().clazz(newIm.getType().getCssClass()).__(newIm.getHandle());
 	}
 }
