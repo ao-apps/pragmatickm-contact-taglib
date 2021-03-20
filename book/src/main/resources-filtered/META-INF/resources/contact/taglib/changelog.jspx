@@ -37,7 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T20:56:44-0500"
-		dateModified="2021-02-19T05:52:12-06:00"
+		dateModified="2021-03-19T21:46:13-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -46,19 +46,28 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
-			>
-				<ul>
-					<li>
-						Cleaned-up use of <code>JspTagException</code> versus <code>JspException</code>.  Generally,
-						methods declare <code>throws JspException</code> while actually throwing instances of
-						<code>JspTagException</code>.  The exception to this is private implementation methods that
-						both declare and throw <code>JspTagException</code>.
-					</li>
-					<li>Attribute setters now throw <code>IllegalArgumentException</code> instead of <code>JspTagException</code>.</li>
-					<li>Updated dependencies.</li>
-				</ul>
-			</changelog:release>
+			/>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.5.1"
+			datePublished="2021-03-19T21:46:13-05:00"
+			groupId="@{project.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{project.scm.url}"
+		>
+			<ul>
+				<li>
+					Cleaned-up use of <code>JspTagException</code> versus <code>JspException</code>.  Generally,
+					methods declare <code>throws JspException</code> while actually throwing instances of
+					<code>JspTagException</code>.  The exception to this is private implementation methods that
+					both declare and throw <code>JspTagException</code>.
+				</li>
+				<li>Attribute setters now throw <code>IllegalArgumentException</code> instead of <code>JspTagException</code>.</li>
+				<li>Updated dependencies.</li>
+			</ul>
+		</changelog:release>
 
 		<changelog:release
 			projectName="@{documented.name}"
