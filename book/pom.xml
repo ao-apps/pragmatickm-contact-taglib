@@ -29,7 +29,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<relativePath>../../../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib-book</artifactId><version>1.5.1</version>
+	<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib-book</artifactId><version>1.5.1-POST-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<properties>
@@ -78,7 +78,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<connection>scm:git:git://github.com/aoindustries/pragmatickm-contact-taglib.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/pragmatickm-contact-taglib.git</developerConnection>
 		<url>https://github.com/aoindustries/pragmatickm-contact-taglib</url>
-		<tag>pragmatickm-contact-taglib-book-1.5.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
