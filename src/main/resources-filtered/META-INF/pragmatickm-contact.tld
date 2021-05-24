@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
+Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2021  AO Industries, Inc.
 	support@aoindustries.com
 	7262 Bull Pen Cir
 	Mobile, AL 36695
@@ -25,8 +25,8 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
-	<!-- datePublished="2016-08-14T20:17:32-0500" -->
-	<!-- dateModified="2016-11-10T22:35:24-0600" -->
+	<!-- datePublished="2016-08-14T20:17:32-05:00" -->
+	<!-- dateModified="2016-11-10T22:35:24-06:00" -->
 	<description><![CDATA[
 		<p>@{description.html}</p>
 	]]></description>
@@ -38,8 +38,8 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	<short-name>contact</short-name>
 	<uri>@{project.url}</uri>
 	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-0500" -->
-		<!-- dateModified="2017-07-27T20:48:04-0500" -->
+		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
+		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				A set of contact information.
@@ -220,8 +220,8 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<dynamic-attributes>true</dynamic-attributes>
 	</tag>
 	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-0500" -->
-		<!-- dateModified="2017-07-27T20:48:04-0500" -->
+		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
+		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of addresses.
@@ -317,8 +317,8 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 	</tag>
 	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-0500" -->
-		<!-- dateModified="2017-07-27T20:48:04-0500" -->
+		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
+		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of email addresses.
@@ -343,8 +343,8 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 	</tag>
 	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-0500" -->
-		<!-- dateModified="2017-07-27T20:48:04-0500" -->
+		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
+		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of phone numbers.
@@ -389,8 +389,8 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 	</tag>
 	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-0500" -->
-		<!-- dateModified="2017-07-27T20:48:04-0500" -->
+		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
+		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of instant messaging handles.
@@ -435,8 +435,8 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 	</tag>
 	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-0500" -->
-		<!-- dateModified="2017-07-27T20:48:04-0500" -->
+		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
+		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				A contact may have any number of web pages.
