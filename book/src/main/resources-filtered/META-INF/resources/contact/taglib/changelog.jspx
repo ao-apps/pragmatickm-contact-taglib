@@ -22,7 +22,7 @@ You should have received a copy of the GNU Lesser General Public License
 along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses />.
 -->
 <jsp:root
-	xmlns:ao="https://aoindustries.com/ao-taglib/"
+	xmlns:ao="https://oss.aoapps.com/taglib/"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:changelog="https://semanticcms.com/changelog/taglib/"
 	xmlns:core="https://semanticcms.com/core/taglib/"
@@ -37,7 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T20:56:44-05:00"
-		dateModified="2021-05-26T06:36:49-05:00"
+		dateModified="2021-05-31T08:58:51-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -45,6 +45,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 				version="@{project.version}"
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
+				repository="https://oss.sonatype.org/content/repositories/snapshots/"
 				scmUrl="@{project.scm.url}"
 			>
 				<ul>
@@ -89,7 +90,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 					Reduced use of property substitutions in <code>pom.xml</code>.
 					This is to help 3rd-party parsers that fail to perform full Maven-compatible substitutions.
 				</li>
-				<li>Using <ao:a href="https://aoindustries.com/ao-fluent-html/">AO Fluent HTML</ao:a> for HTML generation.</li>
+				<li>Using <ao:a href="https://oss.aoapps.com/fluent-html/">AO Fluent HTML</ao:a> for HTML generation.</li>
 			</ul>
 		</changelog:release>
 
@@ -150,7 +151,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			scmUrl="@{project.scm.url}"
 		>
 			<ul>
-				<li>New release for bug fixes in underlying <ao:a href="https://aoindustries.com/ao-encoding/">AO Encoding</ao:a> library.</li>
+				<li>New release for bug fixes in underlying <ao:a href="https://oss.aoapps.com/encoding/">AO Encoding</ao:a> library.</li>
 				<li>Updated dependencies.</li>
 			</ul>
 		</changelog:release>
@@ -165,7 +166,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			scmUrl="@{project.scm.url}"
 		>
 			<ul>
-				<li>New <ao:a href="https://aoindustries.com/ao-oss-parent/">AO OSS Parent</ao:a> POM to simplify <code>pom.xml</code> files.</li>
+				<li>New <ao:a href="https://oss.aoapps.com/parent/">AO OSS Parent</ao:a> POM to simplify <code>pom.xml</code> files.</li>
 				<li>Project documentation moved to per-project book in <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> format.</li>
 				<li>Added changelog as top-level project link.</li>
 				<li>
