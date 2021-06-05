@@ -22,16 +22,16 @@
  */
 package com.pragmatickm.contact.taglib;
 
-import com.aoindustries.encoding.Doctype;
-import com.aoindustries.encoding.Serialization;
-import com.aoindustries.encoding.servlet.DoctypeEE;
-import com.aoindustries.encoding.servlet.SerializationEE;
-import com.aoindustries.html.Document;
-import com.aoindustries.lang.Coercion;
-import com.aoindustries.lang.Strings;
-import com.aoindustries.net.Email;
-import static com.aoindustries.taglib.AttributeUtils.resolveValue;
-import com.aoindustries.validation.ValidationException;
+import com.aoapps.encoding.Doctype;
+import com.aoapps.encoding.Serialization;
+import com.aoapps.encoding.servlet.DoctypeEE;
+import com.aoapps.encoding.servlet.SerializationEE;
+import com.aoapps.html.Document;
+import com.aoapps.lang.Coercion;
+import com.aoapps.lang.Strings;
+import com.aoapps.lang.validation.ValidationException;
+import com.aoapps.net.Email;
+import static com.aoapps.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Contact;
 import com.pragmatickm.contact.renderer.html.ContactHtmlRenderer;
 import com.semanticcms.core.model.ElementContext;

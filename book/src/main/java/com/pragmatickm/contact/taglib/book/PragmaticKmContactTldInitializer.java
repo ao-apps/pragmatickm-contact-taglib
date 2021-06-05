@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2017, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2017, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,9 +22,9 @@
  */
 package com.pragmatickm.contact.taglib.book;
 
-import com.aoindustries.net.DomainName;
-import com.aoindustries.net.Path;
-import com.aoindustries.validation.ValidationException;
+import com.aoapps.lang.validation.ValidationException;
+import com.aoapps.net.DomainName;
+import com.aoapps.net.Path;
 import com.semanticcms.core.model.BookRef;
 import com.semanticcms.core.model.ResourceRef;
 import com.semanticcms.tagreference.TagReferenceInitializer;
