@@ -322,7 +322,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			</dependency>
 			<!-- Runtime Direct -->
 			<dependency>
-				<groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId><version>1.2.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+				<groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId><version>1.2.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<!-- javaee-web-api-bom: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-impl</artifactId> -->
 			<dependency>
