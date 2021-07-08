@@ -81,6 +81,21 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<url>https://github.com/aoindustries/pragmatickm-contact-taglib/issues</url>
 	</issueManagement>
 
+	<repositories>
+		<!-- Repository required here, too, so can find parent -->
+		<repository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<profiles>
 		<profile>
 			<id>offlineLinks</id><activation><file><exists>src/main/java</exists></file></activation>
