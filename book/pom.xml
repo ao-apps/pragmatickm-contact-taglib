@@ -140,6 +140,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 					<dependency>
 						<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>1.6.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 						<type>jar</type>
+						<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
 					</dependency>
 				</dependencies>
 			</plugin>
