@@ -43,6 +43,8 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
 		<sonar.organization>aoindustries</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<!-- TODO: Implement tests -->
+		<sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
 	</properties>
 
 	<name>PragmaticKM Contact Taglib</name>
