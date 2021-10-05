@@ -41,7 +41,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 		<javadoc.taglibReference><![CDATA[<li><a target="${javadoc.target}" href="${project.url}pragmatickm-contact.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 		<!-- SonarQube -->
 		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
-		<sonar.organization>aoindustries</sonar.organization>
+		<sonar.organization>ao-apps</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<!-- TODO: Implement tests -->
 		<sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
@@ -76,20 +76,20 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/pragmatickm-contact-taglib.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/pragmatickm-contact-taglib.git</developerConnection>
-		<url>https://github.com/aoindustries/pragmatickm-contact-taglib</url>
+		<connection>scm:git:git://github.com/ao-apps/pragmatickm-contact-taglib.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/pragmatickm-contact-taglib.git</developerConnection>
+		<url>https://github.com/ao-apps/pragmatickm-contact-taglib</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/pragmatickm-contact-taglib/issues</url>
+		<url>https://github.com/ao-apps/pragmatickm-contact-taglib/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/pragmatickm-contact-taglib/actions</url>
+		<url>https://github.com/ao-apps/pragmatickm-contact-taglib/actions</url>
 	</ciManagement>
 
 	<repositories>
