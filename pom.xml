@@ -288,7 +288,7 @@ along with pragmatickm-contact-taglib.  If not, see <http://www.gnu.org/licenses
 			<!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
 			<!-- javaee-web-api-bom: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId> -->
 			<dependency>
-				<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-model</artifactId><version>1.6.1-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+				<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-model</artifactId><version>1.6.1${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-servlet</artifactId><version>1.6.0${POST-SNAPSHOT}</version>
