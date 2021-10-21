@@ -54,16 +54,16 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class EmailTag extends SimpleTagSupport implements ElementWriter {
 
 	private ValueExpression address;
-    public void setAddress(ValueExpression address) {
+	public void setAddress(ValueExpression address) {
 		this.address = address;
-    }
+	}
 
 	private Email email;
 	private Serialization serialization;
 	private Doctype doctype;
 
 	@Override
-    public void doTag() throws JspException, IOException {
+	public void doTag() throws JspException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
 		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 

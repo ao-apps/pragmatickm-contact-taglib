@@ -51,16 +51,16 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 
 	private ValueExpression href;
-    public void setHref(ValueExpression href) {
+	public void setHref(ValueExpression href) {
 		this.href = href;
-    }
+	}
 
 	private String hrefStr;
 	private Serialization serialization;
 	private Doctype doctype;
 
 	@Override
-    public void doTag() throws JspException, IOException {
+	public void doTag() throws JspException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
 		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 

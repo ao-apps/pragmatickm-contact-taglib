@@ -55,9 +55,9 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class ImTag extends SimpleTagSupport implements ElementWriter {
 
 	private ValueExpression type;
-    public void setType(ValueExpression type) {
+	public void setType(ValueExpression type) {
 		this.type = type;
-    }
+	}
 
 	private ValueExpression handle;
 	public void setHandle(ValueExpression handle) {
@@ -74,7 +74,7 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 	private Doctype doctype;
 
 	@Override
-    public void doTag() throws JspException, IOException {
+	public void doTag() throws JspException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
 		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 

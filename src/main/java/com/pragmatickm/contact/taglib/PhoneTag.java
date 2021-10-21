@@ -55,9 +55,9 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 
 	private ValueExpression type;
-    public void setType(ValueExpression type) {
+	public void setType(ValueExpression type) {
 		this.type = type;
-    }
+	}
 
 	private ValueExpression number;
 	public void setNumber(ValueExpression number) {
@@ -74,7 +74,7 @@ public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 	private Doctype doctype;
 
 	@Override
-    public void doTag() throws JspException, IOException {
+	public void doTag() throws JspException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
 		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 
