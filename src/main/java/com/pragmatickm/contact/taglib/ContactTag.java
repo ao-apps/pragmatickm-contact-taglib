@@ -106,14 +106,14 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
 	}
 
 	private ValueExpression email;
-    public void setEmail(ValueExpression email) {
+	public void setEmail(ValueExpression email) {
 		this.email = email;
-    }
+	}
 
 	private ValueExpression webPage;
-    public void setWebPage(ValueExpression webPage) {
+	public void setWebPage(ValueExpression webPage) {
 		this.webPage = webPage;
-    }
+	}
 
 	@Override
 	protected Contact createElement() {

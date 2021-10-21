@@ -43,9 +43,9 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class AddressTag extends SimpleTagSupport {
 
 	private ValueExpression type;
-    public void setType(ValueExpression type) {
+	public void setType(ValueExpression type) {
 		this.type = type;
-    }
+	}
 
 	private ValueExpression address1;
 	public void setAddress1(ValueExpression address1) {
@@ -83,7 +83,7 @@ public class AddressTag extends SimpleTagSupport {
 	}
 
 	@Override
-    public void doTag() throws JspException, IOException {
+	public void doTag() throws JspException, IOException {
 		final PageContext pageContext = (PageContext)getJspContext();
 		final ServletRequest request = pageContext.getRequest();
 
