@@ -101,6 +101,9 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
 			<releases>
 				<enabled>false</enabled>
 			</releases>
+			<snapshots>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
 		</repository>
 	</repositories>
 
