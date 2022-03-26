@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2017, 2019, 2020, 2021  AO Industries, Inc.
+Copyright (C) 2017, 2019, 2020, 2021, 2022  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T20:56:44-05:00"
-		dateModified="2021-07-22T15:02:39-05:00"
+		dateModified="2022-03-25T23:49:44-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -50,6 +50,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
 			>
 				<ul>
 					<li>Updated for <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> 2.</li>
+					<li>Updated dependencies.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

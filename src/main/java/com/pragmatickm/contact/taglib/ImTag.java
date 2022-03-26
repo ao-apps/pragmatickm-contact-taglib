@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2015, 2016, 2017, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2015, 2016, 2017, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,6 +43,7 @@ import com.semanticcms.core.pages.local.CurrentPage;
 import com.semanticcms.core.taglib.PageElementContext;
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.charset.Charset;
 import java.util.Locale;
 import javax.el.ELContext;
 import javax.el.ValueExpression;
@@ -73,6 +74,7 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 	private Im newIm;
 	private Serialization serialization;
 	private Doctype doctype;
+	private Charset characterEncoding;
 
 	@Override
 	public void doTag() throws JspException, IOException {
@@ -102,6 +104,7 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 				ServletContext servletContext = pageContext.getServletContext();
 				serialization = SerializationEE.get(servletContext, request);
 				doctype = DoctypeEE.get(servletContext, request);
+				characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
 
 				JspWriter out = pageContext.getOut();
 				if(node == null) {
@@ -134,7 +137,7 @@ public class ImTag extends SimpleTagSupport implements ElementWriter {
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException {
-		new Document(serialization, doctype, out)
+		new Document(serialization, doctype, characterEncoding, out)
 			.setAutonli(false) // Do not add extra newlines to JSP
 			.setIndent(false)  // Do not add extra indentation to JSP
 			.span().clazz(newIm.getType().getCssClass()).__(newIm.getHandle());
