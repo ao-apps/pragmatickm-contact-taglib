@@ -20,6 +20,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 package com.pragmatickm.contact.taglib;
 
 import com.aoapps.encoding.Doctype;
