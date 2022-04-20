@@ -57,90 +57,92 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class ImTag extends SimpleTagSupport implements ElementWriter {
 
-	private ValueExpression type;
-	public void setType(ValueExpression type) {
-		this.type = type;
-	}
+  private ValueExpression type;
+  public void setType(ValueExpression type) {
+    this.type = type;
+  }
 
-	private ValueExpression handle;
-	public void setHandle(ValueExpression handle) {
-		this.handle = handle;
-	}
+  private ValueExpression handle;
+  public void setHandle(ValueExpression handle) {
+    this.handle = handle;
+  }
 
-	private ValueExpression comment;
-	public void setComment(ValueExpression comment) {
-		this.comment = comment;
-	}
+  private ValueExpression comment;
+  public void setComment(ValueExpression comment) {
+    this.comment = comment;
+  }
 
-	private Im newIm;
-	private Serialization serialization;
-	private Doctype doctype;
-	private Charset characterEncoding;
+  private Im newIm;
+  private Serialization serialization;
+  private Doctype doctype;
+  private Charset characterEncoding;
 
-	@Override
-	public void doTag() throws JspException, IOException {
-		final PageContext pageContext = (PageContext)getJspContext();
-		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+  @Override
+  public void doTag() throws JspException, IOException {
+    final PageContext pageContext = (PageContext)getJspContext();
+    final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 
-		// Get the current capture state
-		final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
-		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
-			// Evaluate expressions
-			ELContext elContext = pageContext.getELContext();
-			ImType typeObj = ImType.valueOf(
-				resolveValue(type, String.class, elContext)
-					.toUpperCase(Locale.ROOT)
-			);
+    // Get the current capture state
+    final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
+    if (captureLevel.compareTo(CaptureLevel.META) >= 0) {
+      // Evaluate expressions
+      ELContext elContext = pageContext.getELContext();
+      ImType typeObj = ImType.valueOf(
+        resolveValue(type, String.class, elContext)
+          .toUpperCase(Locale.ROOT)
+      );
 
-			newIm = new Im(
-				typeObj,
-				resolveValue(handle, String.class, elContext),
-				resolveValue(comment, String.class, elContext)
-			);
-			Node node = CurrentNode.getCurrentNode(request);
-			if(node instanceof Contact) {
-				Contact currentContact = (Contact)node;
-				currentContact.addIm(newIm);
-			} else {
-				ServletContext servletContext = pageContext.getServletContext();
-				serialization = SerializationEE.get(servletContext, request);
-				doctype = DoctypeEE.get(servletContext, request);
-				characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
+      newIm = new Im(
+        typeObj,
+        resolveValue(handle, String.class, elContext),
+        resolveValue(comment, String.class, elContext)
+      );
+      Node node = CurrentNode.getCurrentNode(request);
+      if (node instanceof Contact) {
+        Contact currentContact = (Contact)node;
+        currentContact.addIm(newIm);
+      } else {
+        ServletContext servletContext = pageContext.getServletContext();
+        serialization = SerializationEE.get(servletContext, request);
+        doctype = DoctypeEE.get(servletContext, request);
+        characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
 
-				JspWriter out = pageContext.getOut();
-				if(node == null) {
-					// Write now
-					if(captureLevel == CaptureLevel.BODY) writeTo(out, new PageElementContext(pageContext));
-				} else {
-					// Write an element marker instead
-					Contact contact = new Contact();
-					contact.addIm(newIm);
-					// Find the optional parent page
-					Page currentPage = CurrentPage.getCurrentPage(request);
-					if(currentPage != null) {
-						currentPage.addElement(contact);
-					} else {
-						// Note: Page freezes all of its elements
-						contact.freeze();
-					}
-					// Add as a child element
-					NodeBodyWriter.writeElementMarker(
-						node.addChildElement(
-							contact,
-							this
-						),
-						out
-					);
-				}
-			}
-		}
-	}
+        JspWriter out = pageContext.getOut();
+        if (node == null) {
+          // Write now
+          if (captureLevel == CaptureLevel.BODY) {
+            writeTo(out, new PageElementContext(pageContext));
+          }
+        } else {
+          // Write an element marker instead
+          Contact contact = new Contact();
+          contact.addIm(newIm);
+          // Find the optional parent page
+          Page currentPage = CurrentPage.getCurrentPage(request);
+          if (currentPage != null) {
+            currentPage.addElement(contact);
+          } else {
+            // Note: Page freezes all of its elements
+            contact.freeze();
+          }
+          // Add as a child element
+          NodeBodyWriter.writeElementMarker(
+            node.addChildElement(
+              contact,
+              this
+            ),
+            out
+          );
+        }
+      }
+    }
+  }
 
-	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException {
-		new Document(serialization, doctype, characterEncoding, out)
-			.setAutonli(false) // Do not add extra newlines to JSP
-			.setIndent(false)  // Do not add extra indentation to JSP
-			.span().clazz(newIm.getType().getCssClass()).__(newIm.getHandle());
-	}
+  @Override
+  public void writeTo(Writer out, ElementContext context) throws IOException {
+    new Document(serialization, doctype, characterEncoding, out)
+      .setAutonli(false) // Do not add extra newlines to JSP
+      .setIndent(false)  // Do not add extra indentation to JSP
+      .span().clazz(newIm.getType().getCssClass()).__(newIm.getHandle());
+  }
 }

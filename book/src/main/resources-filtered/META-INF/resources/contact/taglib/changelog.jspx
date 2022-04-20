@@ -22,257 +22,257 @@ You should have received a copy of the GNU Lesser General Public License
 along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <jsp:root
-	xmlns:ao="https://oss.aoapps.com/taglib/"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:changelog="https://semanticcms.com/changelog/taglib/"
-	xmlns:core="https://semanticcms.com/core/taglib/"
-	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-	xmlns:jsp="http://java.sun.com/JSP/Page"
-	version="2.1"
+  xmlns:ao="https://oss.aoapps.com/taglib/"
+  xmlns:c="http://java.sun.com/jsp/jstl/core"
+  xmlns:changelog="https://semanticcms.com/changelog/taglib/"
+  xmlns:core="https://semanticcms.com/core/taglib/"
+  xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+  xmlns:jsp="http://java.sun.com/JSP/Page"
+  version="2.1"
 >
-	<jsp:directive.page language="java" pageEncoding="UTF-8" />
-	<jsp:directive.page session="false" />
-	<core:page
-		title="@{documented.name} Changelog"
-		shortTitle="Changelog"
-		tocLevels="1"
-		datePublished="2017-07-25T20:56:44-05:00"
-		dateModified="2022-03-25T23:49:44-05:00"
-	>
-		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
-			<changelog:release
-				projectName="@{documented.name}"
-				version="@{project.version}"
-				groupId="@{project.groupId}"
-				artifactId="@{documented.artifactId}"
-				repository="@{nexusUrl}content/repositories/snapshots/"
-				scmUrl="@{project.scm.url}"
-			>
-				<ul>
-					<li>Updated for <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> 2.</li>
-					<li>Updated dependencies.</li>
-				</ul>
-			</changelog:release>
-		</c:if>
+  <jsp:directive.page language="java" pageEncoding="UTF-8" />
+  <jsp:directive.page session="false" />
+  <core:page
+    title="@{documented.name} Changelog"
+    shortTitle="Changelog"
+    tocLevels="1"
+    datePublished="2017-07-25T20:56:44-05:00"
+    dateModified="2022-03-25T23:49:44-05:00"
+  >
+    <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
+      <changelog:release
+        projectName="@{documented.name}"
+        version="@{project.version}"
+        groupId="@{project.groupId}"
+        artifactId="@{documented.artifactId}"
+        repository="@{nexusUrl}content/repositories/snapshots/"
+        scmUrl="@{project.scm.url}"
+      >
+        <ul>
+          <li>Updated for <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> 2.</li>
+          <li>Updated dependencies.</li>
+        </ul>
+      </changelog:release>
+    </c:if>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.6.0"
-			datePublished="2021-07-22T15:02:39-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Updated to <ao:a rel="nofollow" href="https://www.oracle.com/java/technologies/javaee/javaeetechnologies.html#javaee7">Java™ EE 7 Web Profile</ao:a> (Servlet 3.1, JSP 2.3, EL 3.0, and JSTL 1.2).</li>
-				<li>Minimum Java version changed from 1.8 to 11.</li>
-				<li>
-					Now supports Java 9+ modules.  Due to still having filename-based automatic module dependencies,
-					*-SNAPSHOT versions include <code>module-info.class</code> while releases include the
-					<code>Automatic-Module-Name</code> manifest entry.  To minimize the difference between these
-					modes, <code>module-info.java</code> does not perform any transitive requires.
-				</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.6.0"
+      datePublished="2021-07-22T15:02:39-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Updated to <ao:a rel="nofollow" href="https://www.oracle.com/java/technologies/javaee/javaeetechnologies.html#javaee7">Java™ EE 7 Web Profile</ao:a> (Servlet 3.1, JSP 2.3, EL 3.0, and JSTL 1.2).</li>
+        <li>Minimum Java version changed from 1.8 to 11.</li>
+        <li>
+          Now supports Java 9+ modules.  Due to still having filename-based automatic module dependencies,
+          *-SNAPSHOT versions include <code>module-info.class</code> while releases include the
+          <code>Automatic-Module-Name</code> manifest entry.  To minimize the difference between these
+          modes, <code>module-info.java</code> does not perform any transitive requires.
+        </li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.5.1"
-			datePublished="2021-03-19T21:46:13-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>
-					Cleaned-up use of <code>JspTagException</code> versus <code>JspException</code>.  Generally,
-					methods declare <code>throws JspException</code> while actually throwing instances of
-					<code>JspTagException</code>.  The exception to this is private implementation methods that
-					both declare and throw <code>JspTagException</code>.
-				</li>
-				<li>Attribute setters now throw <code>IllegalArgumentException</code> instead of <code>JspTagException</code>.</li>
-				<li>Updated dependencies.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.5.1"
+      datePublished="2021-03-19T21:46:13-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>
+          Cleaned-up use of <code>JspTagException</code> versus <code>JspException</code>.  Generally,
+          methods declare <code>throws JspException</code> while actually throwing instances of
+          <code>JspTagException</code>.  The exception to this is private implementation methods that
+          both declare and throw <code>JspTagException</code>.
+        </li>
+        <li>Attribute setters now throw <code>IllegalArgumentException</code> instead of <code>JspTagException</code>.</li>
+        <li>Updated dependencies.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.5.0"
-			datePublished="2020-03-29T01:16:05-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Minimum Java version changed from 1.7 to 1.8.</li>
-				<li>
-					Reduced use of property substitutions in <code>pom.xml</code>.
-					This is to help 3rd-party parsers that fail to perform full Maven-compatible substitutions.
-				</li>
-				<li>Using <ao:a href="https://oss.aoapps.com/fluent-html/">AO Fluent HTML</ao:a> for HTML generation.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.5.0"
+      datePublished="2020-03-29T01:16:05-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Minimum Java version changed from 1.7 to 1.8.</li>
+        <li>
+          Reduced use of property substitutions in <code>pom.xml</code>.
+          This is to help 3rd-party parsers that fail to perform full Maven-compatible substitutions.
+        </li>
+        <li>Using <ao:a href="https://oss.aoapps.com/fluent-html/">AO Fluent HTML</ao:a> for HTML generation.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.4.0"
-			datePublished="2019-10-12T05:57:40-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Updated dependencies.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.4.0"
+      datePublished="2019-10-12T05:57:40-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Updated dependencies.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.3.5"
-			datePublished="2019-06-23T22:20:43-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Minimum Java version changed from 1.6 to 1.7.</li>
-				<li>Improved formatting and linking of <core:link page="pragmatickm-contact.tld/" />.</li>
-				<li>Using managed dependencies:
-					<ol>
-						<li>This project uses managed dependencies.</li>
-						<li>This project's managed dependencies may also be imported by other projects.</li>
-					</ol>
-				</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.3.5"
+      datePublished="2019-06-23T22:20:43-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Minimum Java version changed from 1.6 to 1.7.</li>
+        <li>Improved formatting and linking of <core:link page="pragmatickm-contact.tld/" />.</li>
+        <li>Using managed dependencies:
+          <ol>
+            <li>This project uses managed dependencies.</li>
+            <li>This project's managed dependencies may also be imported by other projects.</li>
+          </ol>
+        </li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.3.4"
-			datePublished="2017-07-27T00:24:57-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>License changed to LGPL v3.</li>
-				<li>Moving PragmaticKM to GitHub and Maven Central Repository.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.3.4"
+      datePublished="2017-07-27T00:24:57-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>License changed to LGPL v3.</li>
+        <li>Moving PragmaticKM to GitHub and Maven Central Repository.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.3.3"
-			datePublished="2017-07-20T18:56:37-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2/"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>New release for bug fixes in underlying <ao:a href="https://oss.aoapps.com/encoding/">AO Encoding</ao:a> library.</li>
-				<li>Updated dependencies.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.3.3"
+      datePublished="2017-07-20T18:56:37-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      repository="https://aorepo.org/maven2/"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>New release for bug fixes in underlying <ao:a href="https://oss.aoapps.com/encoding/">AO Encoding</ao:a> library.</li>
+        <li>Updated dependencies.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.3.2"
-			datePublished="2016-11-16T22:04:41-06:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2/"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>New <ao:a href="https://oss.aoapps.com/parent/">AO OSS Parent</ao:a> POM to simplify <code>pom.xml</code> files.</li>
-				<li>Project documentation moved to per-project book in <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> format.</li>
-				<li>Added changelog as top-level project link.</li>
-				<li>
-					Taglib tlib-version is now set automatically during build.
-					Unfortunately, we cannot include "-SNAPSHOT" on snapshot builds due to the requirement of "Dewey decimal"
-					for taglib versions.  The unambiguous full version is annotated via comment.
-				</li>
-				<li>Taglib URLs now match project URLs.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.3.2"
+      datePublished="2016-11-16T22:04:41-06:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      repository="https://aorepo.org/maven2/"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>New <ao:a href="https://oss.aoapps.com/parent/">AO OSS Parent</ao:a> POM to simplify <code>pom.xml</code> files.</li>
+        <li>Project documentation moved to per-project book in <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> format.</li>
+        <li>Added changelog as top-level project link.</li>
+        <li>
+          Taglib tlib-version is now set automatically during build.
+          Unfortunately, we cannot include "-SNAPSHOT" on snapshot builds due to the requirement of "Dewey decimal"
+          for taglib versions.  The unambiguous full version is annotated via comment.
+        </li>
+        <li>Taglib URLs now match project URLs.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.3.1"
-			datePublished="2016-10-20T20:15:16-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2/"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Improved Javadoc formatting.</li>
-				<li>Improved README formatting.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.3.1"
+      datePublished="2016-10-20T20:15:16-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      repository="https://aorepo.org/maven2/"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Improved Javadoc formatting.</li>
+        <li>Improved README formatting.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.3.0"
-			datePublished="2016-10-04T23:47:48-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2/"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Improved Javadoc formatting.</li>
-				<li>Set rtexprvalue to false where seems reasonable to do so.</li>
-				<li>Newer taglib version to support deferred expressions.</li>
-				<li>Avoiding calling writeTo when capturing.</li>
-				<li>Attributes that take deferred expressions are now deferred-only.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.3.0"
+      datePublished="2016-10-04T23:47:48-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      repository="https://aorepo.org/maven2/"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Improved Javadoc formatting.</li>
+        <li>Set rtexprvalue to false where seems reasonable to do so.</li>
+        <li>Newer taglib version to support deferred expressions.</li>
+        <li>Avoiding calling writeTo when capturing.</li>
+        <li>Attributes that take deferred expressions are now deferred-only.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.2"
-			datePublished="2016-09-11T17:49:40-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2/"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Use dependencyManagement instead of dependency for junit.</li>
-				<li>Parent POM changed so next release will update all versions.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.2"
+      datePublished="2016-09-11T17:49:40-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      repository="https://aorepo.org/maven2/"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Use dependencyManagement instead of dependency for junit.</li>
+        <li>Parent POM changed so next release will update all versions.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.1"
-			datePublished="2016-09-03T11:33:03-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2/"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Using extensions.xml to avoid chicken/egg problem using ssh for private repositories.</li>
-				<li>Improved Maven configuration for Java EE 6 dependencies.</li>
-			</ul>
-		</changelog:release>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.1"
+      datePublished="2016-09-03T11:33:03-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      repository="https://aorepo.org/maven2/"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Using extensions.xml to avoid chicken/egg problem using ssh for private repositories.</li>
+        <li>Improved Maven configuration for Java EE 6 dependencies.</li>
+      </ul>
+    </changelog:release>
 
-		<changelog:release
-			projectName="@{documented.name}"
-			version="1.0"
-			datePublished="2016-08-30T17:37:52-05:00"
-			groupId="@{project.groupId}"
-			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2/"
-			scmUrl="@{project.scm.url}"
-		>
-			<ul>
-				<li>Pulled contacts out of docs-taglib.</li>
-				<li>Added modules.</li>
-			</ul>
-		</changelog:release>
-	</core:page>
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.0"
+      datePublished="2016-08-30T17:37:52-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      repository="https://aorepo.org/maven2/"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Pulled contacts out of docs-taglib.</li>
+        <li>Added modules.</li>
+      </ul>
+    </changelog:release>
+  </core:page>
 </jsp:root>

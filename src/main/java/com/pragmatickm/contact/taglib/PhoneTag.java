@@ -57,90 +57,92 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 
-	private ValueExpression type;
-	public void setType(ValueExpression type) {
-		this.type = type;
-	}
+  private ValueExpression type;
+  public void setType(ValueExpression type) {
+    this.type = type;
+  }
 
-	private ValueExpression number;
-	public void setNumber(ValueExpression number) {
-		this.number = number;
-	}
+  private ValueExpression number;
+  public void setNumber(ValueExpression number) {
+    this.number = number;
+  }
 
-	private ValueExpression comment;
-	public void setComment(ValueExpression comment) {
-		this.comment = comment;
-	}
+  private ValueExpression comment;
+  public void setComment(ValueExpression comment) {
+    this.comment = comment;
+  }
 
-	private PhoneNumber newPhoneNumber;
-	private Serialization serialization;
-	private Doctype doctype;
-	private Charset characterEncoding;
+  private PhoneNumber newPhoneNumber;
+  private Serialization serialization;
+  private Doctype doctype;
+  private Charset characterEncoding;
 
-	@Override
-	public void doTag() throws JspException, IOException {
-		final PageContext pageContext = (PageContext)getJspContext();
-		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+  @Override
+  public void doTag() throws JspException, IOException {
+    final PageContext pageContext = (PageContext)getJspContext();
+    final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 
-		// Get the current capture state
-		final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
-		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
-			// Evaluate expressions
-			ELContext elContext = pageContext.getELContext();
-			PhoneType typeObj = PhoneType.valueOf(
-				resolveValue(type, String.class, elContext)
-					.toUpperCase(Locale.ROOT)
-			);
+    // Get the current capture state
+    final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
+    if (captureLevel.compareTo(CaptureLevel.META) >= 0) {
+      // Evaluate expressions
+      ELContext elContext = pageContext.getELContext();
+      PhoneType typeObj = PhoneType.valueOf(
+        resolveValue(type, String.class, elContext)
+          .toUpperCase(Locale.ROOT)
+      );
 
-			newPhoneNumber = new PhoneNumber(
-				typeObj,
-				resolveValue(number, String.class, elContext),
-				resolveValue(comment, String.class, elContext)
-			);
-			Node node = CurrentNode.getCurrentNode(request);
-			if(node instanceof Contact) {
-				Contact currentContact = (Contact)node;
-				currentContact.addPhoneNumber(newPhoneNumber);
-			} else {
-				ServletContext servletContext = pageContext.getServletContext();
-				serialization = SerializationEE.get(servletContext, request);
-				doctype = DoctypeEE.get(servletContext, request);
-				characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
+      newPhoneNumber = new PhoneNumber(
+        typeObj,
+        resolveValue(number, String.class, elContext),
+        resolveValue(comment, String.class, elContext)
+      );
+      Node node = CurrentNode.getCurrentNode(request);
+      if (node instanceof Contact) {
+        Contact currentContact = (Contact)node;
+        currentContact.addPhoneNumber(newPhoneNumber);
+      } else {
+        ServletContext servletContext = pageContext.getServletContext();
+        serialization = SerializationEE.get(servletContext, request);
+        doctype = DoctypeEE.get(servletContext, request);
+        characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
 
-				JspWriter out = pageContext.getOut();
-				if(node == null) {
-					// Write now
-					if(captureLevel == CaptureLevel.BODY) writeTo(out, new PageElementContext(pageContext));
-				} else {
-					// Write an element marker instead
-					Contact contact = new Contact();
-					contact.addPhoneNumber(newPhoneNumber);
-					// Find the optional parent page
-					Page currentPage = CurrentPage.getCurrentPage(request);
-					if(currentPage != null) {
-						currentPage.addElement(contact);
-					} else {
-						// Note: Page freezes all of its elements
-						contact.freeze();
-					}
-					// Add as a child element
-					NodeBodyWriter.writeElementMarker(
-						node.addChildElement(
-							contact,
-							this
-						),
-						out
-					);
-				}
-			}
-		}
-	}
+        JspWriter out = pageContext.getOut();
+        if (node == null) {
+          // Write now
+          if (captureLevel == CaptureLevel.BODY) {
+            writeTo(out, new PageElementContext(pageContext));
+          }
+        } else {
+          // Write an element marker instead
+          Contact contact = new Contact();
+          contact.addPhoneNumber(newPhoneNumber);
+          // Find the optional parent page
+          Page currentPage = CurrentPage.getCurrentPage(request);
+          if (currentPage != null) {
+            currentPage.addElement(contact);
+          } else {
+            // Note: Page freezes all of its elements
+            contact.freeze();
+          }
+          // Add as a child element
+          NodeBodyWriter.writeElementMarker(
+            node.addChildElement(
+              contact,
+              this
+            ),
+            out
+          );
+        }
+      }
+    }
+  }
 
-	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException {
-		new Document(serialization, doctype, characterEncoding, out)
-			.setAutonli(false) // Do not add extra newlines to JSP
-			.setIndent(false)  // Do not add extra indentation to JSP
-			.span().clazz(newPhoneNumber.getType().getCssClass()).__(newPhoneNumber.getNumber());
-	}
+  @Override
+  public void writeTo(Writer out, ElementContext context) throws IOException {
+    new Document(serialization, doctype, characterEncoding, out)
+      .setAutonli(false) // Do not add extra newlines to JSP
+      .setIndent(false)  // Do not add extra indentation to JSP
+      .span().clazz(newPhoneNumber.getType().getCssClass()).__(newPhoneNumber.getNumber());
+  }
 }

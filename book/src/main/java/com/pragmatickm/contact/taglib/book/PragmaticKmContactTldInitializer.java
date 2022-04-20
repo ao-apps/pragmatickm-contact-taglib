@@ -32,22 +32,22 @@ import com.semanticcms.tagreference.TagReferenceInitializer;
 
 public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 
-	public PragmaticKmContactTldInitializer() throws ValidationException {
-		super(
-			Maven.properties.getProperty("documented.name") + " Reference",
-			"Taglib Reference",
-			new ResourceRef(
-				new BookRef(
-					DomainName.valueOf("pragmatickm.com"),
-					Path.valueOf("/contact/taglib")
-				),
-				Path.valueOf("/pragmatickm-contact.tld")
-			),
-			true,
-			Maven.properties.getProperty("documented.javadoc.link.javase"),
-			Maven.properties.getProperty("documented.javadoc.link.javaee"),
-			// Self
-			"com.pragmatickm.contact.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.pragmatickm.contact.taglib/"
-		);
-	}
+  public PragmaticKmContactTldInitializer() throws ValidationException {
+    super(
+      Maven.properties.getProperty("documented.name") + " Reference",
+      "Taglib Reference",
+      new ResourceRef(
+        new BookRef(
+          DomainName.valueOf("pragmatickm.com"),
+          Path.valueOf("/contact/taglib")
+        ),
+        Path.valueOf("/pragmatickm-contact.tld")
+      ),
+      true,
+      Maven.properties.getProperty("documented.javadoc.link.javase"),
+      Maven.properties.getProperty("documented.javadoc.link.javaee"),
+      // Self
+      "com.pragmatickm.contact.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.pragmatickm.contact.taglib/"
+    );
+  }
 }
