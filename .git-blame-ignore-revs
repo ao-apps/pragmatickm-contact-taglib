@@ -1,2 +1,6 @@
 # Significant manual code formatting clean-up…
 cb6625486651a76a23a859d86fdfd75f2694b822
+# Tab indentation and UNIX newlines
+a0e65eeceff21dea23eb8a67cca1dadb7e74005f
+# Newer taglib version required for deferred expressions.
+3408a21e4a0aee6a8352c96b82bbebc9ca45cc21
