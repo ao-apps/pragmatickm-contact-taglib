@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2021  AO Industries, Inc.
-	support@aoindustries.com
-	7262 Bull Pen Cir
-	Mobile, AL 36695
+Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2021, 2022  AO Industries, Inc.
+    support@aoindustries.com
+    7262 Bull Pen Cir
+    Mobile, AL 36695
 
 This file is part of pragmatickm-contact-taglib.
 
@@ -22,442 +22,442 @@ You should have received a copy of the GNU Lesser General Public License
 along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <taglib xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
-	version="2.1">
-	<!-- datePublished="2016-08-14T20:17:32-05:00" -->
-	<!-- dateModified="2016-11-10T22:35:24-06:00" -->
-	<description><![CDATA[
-		<p>@{description.html}</p>
-	]]></description>
-	<display-name>@{project.name}</display-name>
-	<tlib-version>
-		<!-- Release: @{project.version} -->
-		@{parsedVersion.majorVersion}.@{parsedVersion.minorVersion}.@{parsedVersion.incrementalVersion}
-	</tlib-version>
-	<short-name>contact</short-name>
-	<uri>@{project.url}</uri>
-	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
-		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				A set of contact information.
-			</p>
-			<p>
-				Phone numbers may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-phone">&lt;contact:phone&gt;</a> tags.
-			</p>
-			<p>
-				Addresses may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-address">&lt;contact:address&gt;</a> tags.
-			</p>
-			<p>
-				Websites may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-webPage">&lt;contact:webPage&gt;</a> tags.
-			</p>
-			<p>
-				Any HTML in the body is displayed in the detailed comments area.
-			</p>
-		]]></description>
-		<name>contact</name>
-		<tag-class>com.pragmatickm.contact.taglib.ContactTag</tag-class>
-		<body-content>scriptless</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p class="semanticcms-tag-reference-summary">
-					The id used in URL anchors.
-				</p>
-				<p>
-					If not provided, is generated from the name.
-					Must be unique per page.
-					Ids generated from names will be unique, but may change as page structure changes.
-				</p>
-			]]></description>
-			<name>id</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Optional CSS style attribute.</p>
-			]]></description>
-			<name>style</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.Object</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>The contact's title, such as Mr., Ms, ...</p>
-			]]></description>
-			<name>title</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>First name.</p>
-			]]></description>
-			<name>first</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Middle name.</p>
-			]]></description>
-			<name>middle</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Nickname.</p>
-			]]></description>
-			<name>nick</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Last name.</p>
-			]]></description>
-			<name>last</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Maiden name.</p>
-			]]></description>
-			<name>maiden</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Any suffix appended to the name after a comma (,).</p>
-			]]></description>
-			<name>suffix</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Company name.</p>
-			]]></description>
-			<name>company</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Department name.</p>
-			]]></description>
-			<name>department</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Job title, such as Directory, CEO, ...</p>
-			]]></description>
-			<name>jobTitle</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p class="semanticcms-tag-reference-summary">
-					Email address.
-				</p>
-				<p>
-					Email addresses may also be provided with nested <a href="@{project.url}pragmatickm-contact.tld/tag-email">&lt;contact:email&gt;</a> tags.
-				</p>
-			]]></description>
-			<name>email</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p class="semanticcms-tag-reference-summary">
-					URL of their web page.
-				</p>
-				<p>
-					Web pages may also be provided with nested <a href="@{project.url}pragmatickm-contact.tld/tag-webPage">&lt;contact:webPage&gt;</a> tags.
-				</p>
-			]]></description>
-			<name>webPage</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<dynamic-attributes>true</dynamic-attributes>
-	</tag>
-	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
-		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				A contact may have any number of addresses.
-			</p>
-			<p>
-				Must be nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag.
-			</p>
-		]]></description>
-		<name>address</name>
-		<tag-class>com.pragmatickm.contact.taglib.AddressTag</tag-class>
-		<body-content>empty</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p>
-					The type of the address, may be one of "work", "home", or "pobox".
-				</p>
-			]]></description>
-			<name>type</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Address1 line.</p>
-			]]></description>
-			<name>address1</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Address2 line.</p>
-			]]></description>
-			<name>address2</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>City.</p>
-			]]></description>
-			<name>city</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>State or province.</p>
-			]]></description>
-			<name>stateProv</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>ZIP or postal code.</p>
-			]]></description>
-			<name>zipPostal</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Country.</p>
-			]]></description>
-			<name>country</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Brief comment associated with this address.</p>
-			]]></description>
-			<name>comment</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-	</tag>
-	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
-		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				A contact may have any number of email addresses.
-			</p>
-			<p>
-				When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
-				Otherwise, will write the email address as a link inline.
-			</p>
-		]]></description>
-		<name>email</name>
-		<tag-class>com.pragmatickm.contact.taglib.EmailTag</tag-class>
-		<body-content>empty</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p>The email address.</p>
-			]]></description>
-			<name>address</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-	</tag>
-	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
-		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				A contact may have any number of phone numbers.
-			</p>
-			<p>
-				When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
-				Otherwise, will write the phone number inline.
-			</p>
-		]]></description>
-		<name>phone</name>
-		<tag-class>com.pragmatickm.contact.taglib.PhoneTag</tag-class>
-		<body-content>empty</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p>The type of the phone number, may be one of "work", "home", "mobile", "pager", "fax".</p>
-			]]></description>
-			<name>type</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Phone number.</p>
-			]]></description>
-			<name>number</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Brief comment associated with this phone number.</p>
-			]]></description>
-			<name>comment</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-	</tag>
-	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
-		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				A contact may have any number of instant messaging handles.
-			</p>
-			<p>
-				When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
-				Otherwise, will write the instant messaging handle inline.
-			</p>
-		]]></description>
-		<name>im</name>
-		<tag-class>com.pragmatickm.contact.taglib.ImTag</tag-class>
-		<body-content>empty</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p>The type of the instant message, may be one of "aim", "icq", "skype".</p>
-			]]></description>
-			<name>type</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>The instant messaging handle.</p>
-			]]></description>
-			<name>handle</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>Brief comment associated with this instant messaging handle.</p>
-			]]></description>
-			<name>comment</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-	</tag>
-	<tag>
-		<!-- datePublished="2016-08-14T20:17:32-05:00" -->
-		<!-- dateModified="2017-07-27T20:48:04-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				A contact may have any number of web pages.
-			</p>
-			<p>
-				When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
-				Otherwise, will write the link to the web page inline.
-			</p>
-		]]></description>
-		<name>webPage</name>
-		<tag-class>com.pragmatickm.contact.taglib.WebPageTag</tag-class>
-		<body-content>empty</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p>The URL of the web page.</p>
-			]]></description>
-			<name>href</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-	</tag>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+  version="2.1">
+  <!-- datePublished="2016-08-14T20:17:32-05:00" -->
+  <!-- dateModified="2016-11-10T22:35:24-06:00" -->
+  <description><![CDATA[
+    <p>@{description.html}</p>
+  ]]></description>
+  <display-name>@{project.name}</display-name>
+  <tlib-version>
+    <!-- Release: @{project.version} -->
+    @{parsedVersion.majorVersion}.@{parsedVersion.minorVersion}.@{parsedVersion.incrementalVersion}
+  </tlib-version>
+  <short-name>contact</short-name>
+  <uri>@{project.url}</uri>
+  <tag>
+    <!-- datePublished="2016-08-14T20:17:32-05:00" -->
+    <!-- dateModified="2017-07-27T20:48:04-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        A set of contact information.
+      </p>
+      <p>
+        Phone numbers may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-phone">&lt;contact:phone&gt;</a> tags.
+      </p>
+      <p>
+        Addresses may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-address">&lt;contact:address&gt;</a> tags.
+      </p>
+      <p>
+        Websites may be added with nested <a href="@{project.url}pragmatickm-contact.tld/tag-webPage">&lt;contact:webPage&gt;</a> tags.
+      </p>
+      <p>
+        Any HTML in the body is displayed in the detailed comments area.
+      </p>
+    ]]></description>
+    <name>contact</name>
+    <tag-class>com.pragmatickm.contact.taglib.ContactTag</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p class="semanticcms-tag-reference-summary">
+          The id used in URL anchors.
+        </p>
+        <p>
+          If not provided, is generated from the name.
+          Must be unique per page.
+          Ids generated from names will be unique, but may change as page structure changes.
+        </p>
+      ]]></description>
+      <name>id</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Optional CSS style attribute.</p>
+      ]]></description>
+      <name>style</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.Object</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>The contact's title, such as Mr., Ms, ...</p>
+      ]]></description>
+      <name>title</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>First name.</p>
+      ]]></description>
+      <name>first</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Middle name.</p>
+      ]]></description>
+      <name>middle</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Nickname.</p>
+      ]]></description>
+      <name>nick</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Last name.</p>
+      ]]></description>
+      <name>last</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Maiden name.</p>
+      ]]></description>
+      <name>maiden</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Any suffix appended to the name after a comma (,).</p>
+      ]]></description>
+      <name>suffix</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Company name.</p>
+      ]]></description>
+      <name>company</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Department name.</p>
+      ]]></description>
+      <name>department</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Job title, such as Directory, CEO, ...</p>
+      ]]></description>
+      <name>jobTitle</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p class="semanticcms-tag-reference-summary">
+          Email address.
+        </p>
+        <p>
+          Email addresses may also be provided with nested <a href="@{project.url}pragmatickm-contact.tld/tag-email">&lt;contact:email&gt;</a> tags.
+        </p>
+      ]]></description>
+      <name>email</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p class="semanticcms-tag-reference-summary">
+          URL of their web page.
+        </p>
+        <p>
+          Web pages may also be provided with nested <a href="@{project.url}pragmatickm-contact.tld/tag-webPage">&lt;contact:webPage&gt;</a> tags.
+        </p>
+      ]]></description>
+      <name>webPage</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+  <tag>
+    <!-- datePublished="2016-08-14T20:17:32-05:00" -->
+    <!-- dateModified="2017-07-27T20:48:04-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        A contact may have any number of addresses.
+      </p>
+      <p>
+        Must be nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag.
+      </p>
+    ]]></description>
+    <name>address</name>
+    <tag-class>com.pragmatickm.contact.taglib.AddressTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p>
+          The type of the address, may be one of "work", "home", or "pobox".
+        </p>
+      ]]></description>
+      <name>type</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Address1 line.</p>
+      ]]></description>
+      <name>address1</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Address2 line.</p>
+      ]]></description>
+      <name>address2</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>City.</p>
+      ]]></description>
+      <name>city</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>State or province.</p>
+      ]]></description>
+      <name>stateProv</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>ZIP or postal code.</p>
+      ]]></description>
+      <name>zipPostal</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Country.</p>
+      ]]></description>
+      <name>country</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Brief comment associated with this address.</p>
+      ]]></description>
+      <name>comment</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+  </tag>
+  <tag>
+    <!-- datePublished="2016-08-14T20:17:32-05:00" -->
+    <!-- dateModified="2017-07-27T20:48:04-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        A contact may have any number of email addresses.
+      </p>
+      <p>
+        When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
+        Otherwise, will write the email address as a link inline.
+      </p>
+    ]]></description>
+    <name>email</name>
+    <tag-class>com.pragmatickm.contact.taglib.EmailTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p>The email address.</p>
+      ]]></description>
+      <name>address</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+  </tag>
+  <tag>
+    <!-- datePublished="2016-08-14T20:17:32-05:00" -->
+    <!-- dateModified="2017-07-27T20:48:04-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        A contact may have any number of phone numbers.
+      </p>
+      <p>
+        When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
+        Otherwise, will write the phone number inline.
+      </p>
+    ]]></description>
+    <name>phone</name>
+    <tag-class>com.pragmatickm.contact.taglib.PhoneTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p>The type of the phone number, may be one of "work", "home", "mobile", "pager", "fax".</p>
+      ]]></description>
+      <name>type</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Phone number.</p>
+      ]]></description>
+      <name>number</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Brief comment associated with this phone number.</p>
+      ]]></description>
+      <name>comment</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+  </tag>
+  <tag>
+    <!-- datePublished="2016-08-14T20:17:32-05:00" -->
+    <!-- dateModified="2017-07-27T20:48:04-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        A contact may have any number of instant messaging handles.
+      </p>
+      <p>
+        When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
+        Otherwise, will write the instant messaging handle inline.
+      </p>
+    ]]></description>
+    <name>im</name>
+    <tag-class>com.pragmatickm.contact.taglib.ImTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p>The type of the instant message, may be one of "aim", "icq", "skype".</p>
+      ]]></description>
+      <name>type</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>The instant messaging handle.</p>
+      ]]></description>
+      <name>handle</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>Brief comment associated with this instant messaging handle.</p>
+      ]]></description>
+      <name>comment</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+  </tag>
+  <tag>
+    <!-- datePublished="2016-08-14T20:17:32-05:00" -->
+    <!-- dateModified="2017-07-27T20:48:04-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        A contact may have any number of web pages.
+      </p>
+      <p>
+        When nested inside a <a href="@{project.url}pragmatickm-contact.tld/tag-contact">&lt;contact:contact&gt;</a> tag, will be written as part of overall contact.
+        Otherwise, will write the link to the web page inline.
+      </p>
+    ]]></description>
+    <name>webPage</name>
+    <tag-class>com.pragmatickm.contact.taglib.WebPageTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p>The URL of the web page.</p>
+      ]]></description>
+      <name>href</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+  </tag>
 </taglib>

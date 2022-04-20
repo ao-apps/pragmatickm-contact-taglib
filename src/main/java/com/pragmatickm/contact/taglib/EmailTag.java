@@ -55,78 +55,80 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class EmailTag extends SimpleTagSupport implements ElementWriter {
 
-	private ValueExpression address;
-	public void setAddress(ValueExpression address) {
-		this.address = address;
-	}
+  private ValueExpression address;
+  public void setAddress(ValueExpression address) {
+    this.address = address;
+  }
 
-	private Email email;
-	private Serialization serialization;
-	private Doctype doctype;
-	private Charset characterEncoding;
+  private Email email;
+  private Serialization serialization;
+  private Doctype doctype;
+  private Charset characterEncoding;
 
-	@Override
-	public void doTag() throws JspException, IOException {
-		final PageContext pageContext = (PageContext)getJspContext();
-		final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+  @Override
+  public void doTag() throws JspException, IOException {
+    final PageContext pageContext = (PageContext)getJspContext();
+    final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 
-		// Get the current capture state
-		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
-		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
-			// Evaluate expressions
-			try {
-				email = Email.valueOf(resolveValue(address, String.class, pageContext.getELContext()));
-			} catch(ValidationException e) {
-				throw new JspTagException(e);
-			}
+    // Get the current capture state
+    final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
+    if (captureLevel.compareTo(CaptureLevel.META) >= 0) {
+      // Evaluate expressions
+      try {
+        email = Email.valueOf(resolveValue(address, String.class, pageContext.getELContext()));
+      } catch (ValidationException e) {
+        throw new JspTagException(e);
+      }
 
-			Node node = CurrentNode.getCurrentNode(request);
-			if(node instanceof Contact) {
-				Contact currentContact = (Contact)node;
-				currentContact.addEmail(email);
-			} else {
-				ServletContext servletContext = pageContext.getServletContext();
-				serialization = SerializationEE.get(servletContext, request);
-				doctype = DoctypeEE.get(servletContext, request);
-				characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
+      Node node = CurrentNode.getCurrentNode(request);
+      if (node instanceof Contact) {
+        Contact currentContact = (Contact)node;
+        currentContact.addEmail(email);
+      } else {
+        ServletContext servletContext = pageContext.getServletContext();
+        serialization = SerializationEE.get(servletContext, request);
+        doctype = DoctypeEE.get(servletContext, request);
+        characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
 
-				JspWriter out = pageContext.getOut();
-				if(node == null) {
-					// Write now
-					if(captureLevel == CaptureLevel.BODY) writeTo(out, new PageElementContext(pageContext));
-				} else {
-					// Write an element marker instead
-					Contact contact = new Contact();
-					contact.addEmail(email);
-					// Find the optional parent page
-					Page currentPage = CurrentPage.getCurrentPage(request);
-					if(currentPage != null) {
-						currentPage.addElement(contact);
-					} else {
-						// Note: Page freezes all of its elements
-						contact.freeze();
-					}
-					// Add as a child element
-					NodeBodyWriter.writeElementMarker(
-						node.addChildElement(
-							contact,
-							this
-						),
-						out
-					);
-				}
-			}
-		}
-	}
+        JspWriter out = pageContext.getOut();
+        if (node == null) {
+          // Write now
+          if (captureLevel == CaptureLevel.BODY) {
+            writeTo(out, new PageElementContext(pageContext));
+          }
+        } else {
+          // Write an element marker instead
+          Contact contact = new Contact();
+          contact.addEmail(email);
+          // Find the optional parent page
+          Page currentPage = CurrentPage.getCurrentPage(request);
+          if (currentPage != null) {
+            currentPage.addElement(contact);
+          } else {
+            // Note: Page freezes all of its elements
+            contact.freeze();
+          }
+          // Add as a child element
+          NodeBodyWriter.writeElementMarker(
+            node.addChildElement(
+              contact,
+              this
+            ),
+            out
+          );
+        }
+      }
+    }
+  }
 
-	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException {
-		String emailString = email.toString();
-		new Document(serialization, doctype, characterEncoding, out)
-			.setAutonli(false) // Do not add extra newlines to JSP
-			.setIndent(false)  // Do not add extra indentation to JSP
-			.span().clazz("pragmatickm-contact-email").__(span -> span
-				.a("mailto:" + emailString).__(emailString)
-			);
-	}
+  @Override
+  public void writeTo(Writer out, ElementContext context) throws IOException {
+    String emailString = email.toString();
+    new Document(serialization, doctype, characterEncoding, out)
+      .setAutonli(false) // Do not add extra newlines to JSP
+      .setIndent(false)  // Do not add extra indentation to JSP
+      .span().clazz("pragmatickm-contact-email").__(span -> span
+        .a("mailto:" + emailString).__(emailString)
+      );
+  }
 }

@@ -27,17 +27,17 @@ import com.semanticcms.tagreference.TagReferenceInitializer;
 
 public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 
-	public PragmaticKmContactTldInitializer() {
-		super(
-			Maven.properties.getProperty("documented.name") + " Reference",
-			"Taglib Reference",
-			"/contact/taglib",
-			"/pragmatickm-contact.tld",
-			true,
-			Maven.properties.getProperty("documented.javadoc.link.javase"),
-			Maven.properties.getProperty("documented.javadoc.link.javaee"),
-			// Self
-			"com.pragmatickm.contact.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.pragmatickm.contact.taglib/"
-		);
-	}
+  public PragmaticKmContactTldInitializer() {
+    super(
+      Maven.properties.getProperty("documented.name") + " Reference",
+      "Taglib Reference",
+      "/contact/taglib",
+      "/pragmatickm-contact.tld",
+      true,
+      Maven.properties.getProperty("documented.javadoc.link.javase"),
+      Maven.properties.getProperty("documented.javadoc.link.javaee"),
+      // Self
+      "com.pragmatickm.contact.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.pragmatickm.contact.taglib/"
+    );
+  }
 }
