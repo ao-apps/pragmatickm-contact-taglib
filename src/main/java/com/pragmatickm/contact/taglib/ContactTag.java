@@ -53,66 +53,79 @@ import javax.servlet.jsp.PageContext;
 public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*/ {
 
   private ValueExpression style;
+
   public void setStyle(ValueExpression style) {
     this.style = style;
   }
 
   private ValueExpression title;
+
   public void setTitle(ValueExpression title) {
     this.title = title;
   }
 
   private ValueExpression first;
+
   public void setFirst(ValueExpression first) {
     this.first = first;
   }
 
   private ValueExpression middle;
+
   public void setMiddle(ValueExpression middle) {
     this.middle = middle;
   }
 
   private ValueExpression nick;
+
   public void setNick(ValueExpression nick) {
     this.nick = nick;
   }
 
   private ValueExpression last;
+
   public void setLast(ValueExpression last) {
     this.last = last;
   }
 
   private ValueExpression maiden;
+
   public void setMaiden(ValueExpression maiden) {
     this.maiden = maiden;
   }
 
   private ValueExpression suffix;
+
   public void setSuffix(ValueExpression suffix) {
     this.suffix = suffix;
   }
 
   private ValueExpression company;
+
   public void setCompany(ValueExpression company) {
     this.company = company;
   }
 
   private ValueExpression department;
+
   public void setDepartment(ValueExpression department) {
     this.department = department;
   }
 
   private ValueExpression jobTitle;
+
   public void setJobTitle(ValueExpression jobTitle) {
     this.jobTitle = jobTitle;
   }
 
   private ValueExpression email;
+
   public void setEmail(ValueExpression email) {
     this.email = email;
   }
 
   private ValueExpression webPage;
+
   public void setWebPage(ValueExpression webPage) {
     this.webPage = webPage;
   }
@@ -157,10 +170,10 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
 
   @Override
   protected void doBody(Contact contact, CaptureLevel captureLevel) throws JspException, IOException {
-    final PageContext pageContext = (PageContext)getJspContext();
+    final PageContext pageContext = (PageContext) getJspContext();
     if (captureLevel == CaptureLevel.BODY) {
       ServletContext servletContext = pageContext.getServletContext();
-      HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+      HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
       pageIndex = PageIndex.getCurrentPageIndex(pageContext.getRequest());
       styleObj = Coercion.nullIfEmpty(resolveValue(style, Object.class, pageContext.getELContext()));
       serialization = SerializationEE.get(servletContext, request);
@@ -173,13 +186,13 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException {
     ContactImpl.writeContactTable(
-      pageIndex,
-      new Document(serialization, doctype, characterEncoding, out)
-        .setAutonli(false) // Do not add extra newlines to JSP
-        .setIndent(false), // Do not add extra indentation to JSP
-      context,
-      styleObj,
-      getElement()
+        pageIndex,
+        new Document(serialization, doctype, characterEncoding, out)
+            .setAutonli(false) // Do not add extra newlines to JSP
+            .setIndent(false), // Do not add extra indentation to JSP
+        context,
+        styleObj,
+        getElement()
     );
   }
 }

@@ -53,6 +53,7 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 
   private ValueExpression href;
+
   public void setHref(ValueExpression href) {
     this.href = href;
   }
@@ -64,8 +65,8 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 
   @Override
   public void doTag() throws JspException, IOException {
-    final PageContext pageContext = (PageContext)getJspContext();
-    final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+    final PageContext pageContext = (PageContext) getJspContext();
+    final HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
 
     // Get the current capture state
     final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
@@ -75,7 +76,7 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 
       Node node = CurrentNode.getCurrentNode(request);
       if (node instanceof Contact) {
-        Contact currentContact = (Contact)node;
+        Contact currentContact = (Contact) node;
         currentContact.addWebPage(hrefStr);
       } else {
         ServletContext servletContext = pageContext.getServletContext();
@@ -103,11 +104,11 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
           }
           // Add as a child element
           NodeBodyWriter.writeElementMarker(
-            node.addChildElement(
-              contact,
-              this
-            ),
-            out
+              node.addChildElement(
+                  contact,
+                  this
+              ),
+              out
           );
         }
       }
@@ -117,10 +118,10 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException {
     new Document(serialization, doctype, characterEncoding, out)
-      .setAutonli(false) // Do not add extra newlines to JSP
-      .setIndent(false)  // Do not add extra indentation to JSP
-      .span().clazz("pragmatickm-contact-web-page").__(span -> span
-        .a(hrefStr).__(hrefStr)
-      );
+        .setAutonli(false) // Do not add extra newlines to JSP
+        .setIndent(false)  // Do not add extra indentation to JSP
+        .span().clazz("pragmatickm-contact-web-page").__(span -> span
+            .a(hrefStr).__(hrefStr)
+    );
   }
 }

@@ -56,6 +56,7 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class EmailTag extends SimpleTagSupport implements ElementWriter {
 
   private ValueExpression address;
+
   public void setAddress(ValueExpression address) {
     this.address = address;
   }
@@ -67,8 +68,8 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
 
   @Override
   public void doTag() throws JspException, IOException {
-    final PageContext pageContext = (PageContext)getJspContext();
-    final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+    final PageContext pageContext = (PageContext) getJspContext();
+    final HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
 
     // Get the current capture state
     final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
@@ -82,7 +83,7 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
 
       Node node = CurrentNode.getCurrentNode(request);
       if (node instanceof Contact) {
-        Contact currentContact = (Contact)node;
+        Contact currentContact = (Contact) node;
         currentContact.addEmail(email);
       } else {
         ServletContext servletContext = pageContext.getServletContext();
@@ -110,11 +111,11 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
           }
           // Add as a child element
           NodeBodyWriter.writeElementMarker(
-            node.addChildElement(
-              contact,
-              this
-            ),
-            out
+              node.addChildElement(
+                  contact,
+                  this
+              ),
+              out
           );
         }
       }
@@ -125,10 +126,10 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
   public void writeTo(Writer out, ElementContext context) throws IOException {
     String emailString = email.toString();
     new Document(serialization, doctype, characterEncoding, out)
-      .setAutonli(false) // Do not add extra newlines to JSP
-      .setIndent(false)  // Do not add extra indentation to JSP
-      .span().clazz("pragmatickm-contact-email").__(span -> span
-        .a("mailto:" + emailString).__(emailString)
-      );
+        .setAutonli(false) // Do not add extra newlines to JSP
+        .setIndent(false)  // Do not add extra indentation to JSP
+        .span().clazz("pragmatickm-contact-email").__(span -> span
+            .a("mailto:" + emailString).__(emailString)
+    );
   }
 }
