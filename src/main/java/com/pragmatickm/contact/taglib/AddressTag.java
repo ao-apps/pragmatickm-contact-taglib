@@ -44,48 +44,56 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class AddressTag extends SimpleTagSupport {
 
   private ValueExpression type;
+
   public void setType(ValueExpression type) {
     this.type = type;
   }
 
   private ValueExpression address1;
+
   public void setAddress1(ValueExpression address1) {
     this.address1 = address1;
   }
 
   private ValueExpression address2;
+
   public void setAddress2(ValueExpression address2) {
     this.address2 = address2;
   }
 
   private ValueExpression city;
+
   public void setCity(ValueExpression city) {
     this.city = city;
   }
 
   private ValueExpression stateProv;
+
   public void setStateProv(ValueExpression stateProv) {
     this.stateProv = stateProv;
   }
 
   private ValueExpression zipPostal;
+
   public void setZipPostal(ValueExpression zipPostal) {
     this.zipPostal = zipPostal;
   }
 
   private ValueExpression country;
+
   public void setCountry(ValueExpression country) {
     this.country = country;
   }
 
   private ValueExpression comment;
+
   public void setComment(ValueExpression comment) {
     this.comment = comment;
   }
 
   @Override
   public void doTag() throws JspException, IOException {
-    final PageContext pageContext = (PageContext)getJspContext();
+    final PageContext pageContext = (PageContext) getJspContext();
     final ServletRequest request = pageContext.getRequest();
 
     // Get the current capture state
@@ -95,26 +103,26 @@ public class AddressTag extends SimpleTagSupport {
       if (!(currentNode instanceof Contact)) {
         throw new JspTagException("<address> must be nested in <contact>");
       }
-      final Contact currentContact = (Contact)currentNode;
+      final Contact currentContact = (Contact) currentNode;
 
       // Evaluate expressions
       ELContext elContext = pageContext.getELContext();
       AddressType typeObj = AddressType.valueOf(
-        resolveValue(type, String.class, elContext)
-          .toUpperCase(Locale.ROOT)
+          resolveValue(type, String.class, elContext)
+              .toUpperCase(Locale.ROOT)
       );
 
       currentContact.addAddress(
-        new Address(
-          typeObj,
-          resolveValue(address1, String.class, elContext),
-          resolveValue(address2, String.class, elContext),
-          resolveValue(city, String.class, elContext),
-          resolveValue(stateProv, String.class, elContext),
-          resolveValue(zipPostal, String.class, elContext),
-          resolveValue(country, String.class, elContext),
-          resolveValue(comment, String.class, elContext)
-        )
+          new Address(
+              typeObj,
+              resolveValue(address1, String.class, elContext),
+              resolveValue(address2, String.class, elContext),
+              resolveValue(city, String.class, elContext),
+              resolveValue(stateProv, String.class, elContext),
+              resolveValue(zipPostal, String.class, elContext),
+              resolveValue(country, String.class, elContext),
+              resolveValue(comment, String.class, elContext)
+          )
       );
     }
   }

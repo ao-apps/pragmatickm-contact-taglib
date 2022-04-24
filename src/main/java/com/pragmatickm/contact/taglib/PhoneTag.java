@@ -58,16 +58,19 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 
   private ValueExpression type;
+
   public void setType(ValueExpression type) {
     this.type = type;
   }
 
   private ValueExpression number;
+
   public void setNumber(ValueExpression number) {
     this.number = number;
   }
 
   private ValueExpression comment;
+
   public void setComment(ValueExpression comment) {
     this.comment = comment;
   }
@@ -79,8 +82,8 @@ public class PhoneTag extends SimpleTagSupport implements ElementWriter {
 
   @Override
   public void doTag() throws JspException, IOException {
-    final PageContext pageContext = (PageContext)getJspContext();
-    final HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+    final PageContext pageContext = (PageContext) getJspContext();
+    final HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
 
     // Get the current capture state
     final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
@@ -88,18 +91,18 @@ public class PhoneTag extends SimpleTagSupport implements ElementWriter {
       // Evaluate expressions
       ELContext elContext = pageContext.getELContext();
       PhoneType typeObj = PhoneType.valueOf(
-        resolveValue(type, String.class, elContext)
-          .toUpperCase(Locale.ROOT)
+          resolveValue(type, String.class, elContext)
+              .toUpperCase(Locale.ROOT)
       );
 
       newPhoneNumber = new PhoneNumber(
-        typeObj,
-        resolveValue(number, String.class, elContext),
-        resolveValue(comment, String.class, elContext)
+          typeObj,
+          resolveValue(number, String.class, elContext),
+          resolveValue(comment, String.class, elContext)
       );
       Node node = CurrentNode.getCurrentNode(request);
       if (node instanceof Contact) {
-        Contact currentContact = (Contact)node;
+        Contact currentContact = (Contact) node;
         currentContact.addPhoneNumber(newPhoneNumber);
       } else {
         ServletContext servletContext = pageContext.getServletContext();
@@ -127,11 +130,11 @@ public class PhoneTag extends SimpleTagSupport implements ElementWriter {
           }
           // Add as a child element
           NodeBodyWriter.writeElementMarker(
-            node.addChildElement(
-              contact,
-              this
-            ),
-            out
+              node.addChildElement(
+                  contact,
+                  this
+              ),
+              out
           );
         }
       }
@@ -141,8 +144,8 @@ public class PhoneTag extends SimpleTagSupport implements ElementWriter {
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException {
     new Document(serialization, doctype, characterEncoding, out)
-      .setAutonli(false) // Do not add extra newlines to JSP
-      .setIndent(false)  // Do not add extra indentation to JSP
-      .span().clazz(newPhoneNumber.getType().getCssClass()).__(newPhoneNumber.getNumber());
+        .setAutonli(false) // Do not add extra newlines to JSP
+        .setIndent(false)  // Do not add extra indentation to JSP
+        .span().clazz(newPhoneNumber.getType().getCssClass()).__(newPhoneNumber.getNumber());
   }
 }

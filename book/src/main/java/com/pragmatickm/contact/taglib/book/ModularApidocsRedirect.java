@@ -41,9 +41,9 @@ public class ModularApidocsRedirect extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     HttpServletUtil.sendRedirect(
-      HttpServletResponse.SC_MOVED_PERMANENTLY, req, resp,
-      "/contact/taglib/apidocs/com.pragmatickm.contact.taglib/com" + Objects.toString(req.getPathInfo(), ""),
-      URIParametersUtils.of(req.getQueryString()), true, false
+        HttpServletResponse.SC_MOVED_PERMANENTLY, req, resp,
+        "/contact/taglib/apidocs/com.pragmatickm.contact.taglib/com" + Objects.toString(req.getPathInfo(), ""),
+        URIParametersUtils.of(req.getQueryString()), true, false
     );
   }
 }
