@@ -16,3 +16,6 @@
 
 # Newer taglib version required for deferred expressions.
 3408a21e4a0aee6a8352c96b82bbebc9ca45cc21
+
+# Performed automatic source code clean-up with rewrite-maven-plugin
+0f4cdbe59f59862af174c5e428fb15e171019c78
