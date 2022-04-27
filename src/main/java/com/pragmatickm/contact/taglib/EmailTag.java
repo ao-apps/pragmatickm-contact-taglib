@@ -126,8 +126,8 @@ public class EmailTag extends SimpleTagSupport implements ElementWriter {
   public void writeTo(Writer out, ElementContext context) throws IOException {
     String emailString = email.toString();
     new Document(serialization, doctype, characterEncoding, out)
-        .setAutonli(false) // Do not add extra newlines to JSP
-        .setIndent(false)  // Do not add extra indentation to JSP
+        .setAutonli(false)// Do not add extra newlines to JSP
+        .setIndent(false)// Do not add extra indentation to JSP
         .span().clazz("pragmatickm-contact-email").__(span -> span
             .a("mailto:" + emailString).__(emailString)
     );

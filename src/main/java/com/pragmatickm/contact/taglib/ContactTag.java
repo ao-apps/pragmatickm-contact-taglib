@@ -188,7 +188,7 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
     ContactImpl.writeContactTable(
         pageIndex,
         new Document(serialization, doctype, characterEncoding, out)
-            .setAutonli(false) // Do not add extra newlines to JSP
+            .setAutonli(false)// Do not add extra newlines to JSP
             .setIndent(false), // Do not add extra indentation to JSP
         context,
         styleObj,
