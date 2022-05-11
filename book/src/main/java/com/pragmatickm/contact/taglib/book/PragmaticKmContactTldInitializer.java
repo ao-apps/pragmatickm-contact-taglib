@@ -24,9 +24,16 @@
 package com.pragmatickm.contact.taglib.book;
 
 import com.semanticcms.tagreference.TagReferenceInitializer;
+import javax.servlet.ServletContainerInitializer;
 
+/**
+ * Initializes a tag reference during {@linkplain ServletContainerInitializer application start-up}.
+ */
 public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 
+  /**
+   * Parses the TLD file.
+   */
   public PragmaticKmContactTldInitializer() {
     super(
         Maven.properties.getProperty("documented.name") + " Reference",

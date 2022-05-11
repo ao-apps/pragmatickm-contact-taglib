@@ -24,6 +24,7 @@
 package com.pragmatickm.contact.taglib;
 
 import static com.aoapps.taglib.AttributeUtils.resolveValue;
+
 import com.pragmatickm.contact.model.Address;
 import com.pragmatickm.contact.model.AddressType;
 import com.pragmatickm.contact.model.Contact;

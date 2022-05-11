@@ -23,12 +23,13 @@
 
 package com.pragmatickm.contact.taglib;
 
+import static com.aoapps.taglib.AttributeUtils.resolveValue;
+
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.Serialization;
 import com.aoapps.encoding.servlet.DoctypeEE;
 import com.aoapps.encoding.servlet.SerializationEE;
 import com.aoapps.html.Document;
-import static com.aoapps.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Contact;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.model.ElementWriter;
@@ -122,6 +123,6 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
         .setIndent(false)// Do not add extra indentation to JSP
         .span().clazz("pragmatickm-contact-web-page").__(span -> span
             .a(hrefStr).__(hrefStr)
-    );
+        );
   }
 }
