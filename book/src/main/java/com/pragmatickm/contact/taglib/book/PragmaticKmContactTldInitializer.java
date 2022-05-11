@@ -29,9 +29,16 @@ import com.aoapps.net.Path;
 import com.semanticcms.core.model.BookRef;
 import com.semanticcms.core.model.ResourceRef;
 import com.semanticcms.tagreference.TagReferenceInitializer;
+import javax.servlet.ServletContainerInitializer;
 
+/**
+ * Initializes a tag reference during {@linkplain ServletContainerInitializer application start-up}.
+ */
 public class PragmaticKmContactTldInitializer extends TagReferenceInitializer {
 
+  /**
+   * Parses the TLD file.
+   */
   public PragmaticKmContactTldInitializer() throws ValidationException {
     super(
         Maven.properties.getProperty("documented.name") + " Reference",

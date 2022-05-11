@@ -23,6 +23,8 @@
 
 package com.pragmatickm.contact.taglib;
 
+import static com.aoapps.taglib.AttributeUtils.resolveValue;
+
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.Serialization;
 import com.aoapps.encoding.servlet.DoctypeEE;
@@ -32,7 +34,6 @@ import com.aoapps.lang.Coercion;
 import com.aoapps.lang.Strings;
 import com.aoapps.lang.validation.ValidationException;
 import com.aoapps.net.Email;
-import static com.aoapps.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.contact.model.Contact;
 import com.pragmatickm.contact.renderer.html.ContactHtmlRenderer;
 import com.semanticcms.core.model.ElementContext;
