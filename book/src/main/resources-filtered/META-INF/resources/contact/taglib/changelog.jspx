@@ -37,7 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2017-07-25T20:56:44-05:00"
-    dateModified="2022-03-25T23:49:44-05:00"
+    dateModified="2022-05-15T09:43:02-05:00"
   >
     <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
       <changelog:release
@@ -50,10 +50,22 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
       >
         <ul>
           <li>Updated for <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> 2.</li>
-          <li>Updated dependencies.</li>
         </ul>
       </changelog:release>
     </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.6.1"
+      datePublished="2022-05-15T09:43:02-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Updated dependencies.</li>
+      </ul>
+    </changelog:release>
 
     <changelog:release
       projectName="@{documented.name}"
