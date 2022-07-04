@@ -36,15 +36,15 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     <module.name>com.pragmatickm.contact.taglib.book</module.name>
     <!-- These values are copied from the project being documented -->
     <documented.artifactId>pragmatickm-contact-taglib</documented.artifactId>
-    <documented.name>PragmaticKM Contact Taglib²</documented.name>
+    <documented.name>PragmaticKM Contact Taglib</documented.name>
     <documented.description>Contacts nested within SemanticCMS pages and elements in a JSP environment.</documented.description>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
   </properties>
 
-  <name>PragmaticKM Contact Taglib² Book</name>
+  <name>PragmaticKM Contact Taglib Book</name>
   <url>https://pragmatickm.com/contact/taglib/</url>
-  <description>Documentation for PragmaticKM Contact Taglib² in SemanticCMS format.</description>
+  <description>Documentation for PragmaticKM Contact Taglib in SemanticCMS format.</description>
   <inceptionYear>2013</inceptionYear>
 
   <licenses>
