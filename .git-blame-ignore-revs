@@ -10,18 +10,23 @@
 
 # Significant manual code formatting clean-up…
 8e1f5f64610a96354d52ff75ebfc22b996dfe6d4
+cb6625486651a76a23a859d86fdfd75f2694b822
 
 # Tab indentation and UNIX newlines
 8c006980f4e1c2ceace530947b63c4473fab2f08
+a0e65eeceff21dea23eb8a67cca1dadb7e74005f
 
 # Newer taglib version required for deferred expressions.
 3408a21e4a0aee6a8352c96b82bbebc9ca45cc21
 
 # Performed automatic source code clean-up with rewrite-maven-plugin
 0f4cdbe59f59862af174c5e428fb15e171019c78
+4db4b451951988be320b0986ae5d0d2346a2401c
 
 # Performed automatic clean-up with org.openrewrite.java.cleanup.Cleanup
 70e9e3a136c67fe5a0739381ab4a4ccde4d4a41f
+5c616a4ac83e6309c6be3fa1e899e4d3e22d9d0a
 
 # Performed manual checkstyle clean-up
 9032857392d8979830d867801c69c3a278aa0000
+9908fe934fe87b7df70abdad50f273fa417e174d
