@@ -1,8 +1,8 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/ao-apps) [PragmaticKM](https://github.com/ao-apps/pragmatickm) / [Contact](https://github.com/ao-apps/pragmatickm-contact) / [Taglib](https://github.com/ao-apps/pragmatickm-contact-taglib)
 
-[![project: alpha](https://pragmatickm.com/ao-badges/project-current-stable.svg)](https://aoindustries.com/life-cycle#project-current-stable)
-[![management: preview](https://pragmatickm.com/ao-badges/management-production.svg)](https://aoindustries.com/life-cycle#management-production)
-[![packaging: developmental](https://pragmatickm.com/ao-badges/packaging-active.svg)](https://aoindustries.com/life-cycle#packaging-active)  
+[![project: alpha](https://pragmatickm.com/ao-badges/project-alpha.svg)](https://aoindustries.com/life-cycle#project-alpha)
+[![management: preview](https://pragmatickm.com/ao-badges/management-preview.svg)](https://aoindustries.com/life-cycle#management-preview)
+[![packaging: developmental](https://pragmatickm.com/ao-badges/packaging-developmental.svg)](https://aoindustries.com/life-cycle#packaging-developmental)  
 [![java: &gt;= 11](https://pragmatickm.com/ao-badges/java-11.svg)](https://docs.oracle.com/en/java/javase/11/docs/api/)
 [![java ee: &gt;= 7](https://pragmatickm.com/ao-badges/javaee-7.svg)](https://docs.oracle.com/javaee/7/api/)
 [![semantic versioning: 2.0.0](https://pragmatickm.com/ao-badges/semver-2.0.0.svg)](http://semver.org/spec/v2.0.0.html)
