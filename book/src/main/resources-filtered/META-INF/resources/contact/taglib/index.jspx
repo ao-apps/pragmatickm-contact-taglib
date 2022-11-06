@@ -34,7 +34,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     title="@{documented.name}"
     description="@{documented.description}"
     datePublished="2017-07-25T20:56:44-05:00"
-    dateModified="2021-07-16T03:48:08-05:00"
+    dateModified="2022-11-05T21:21:06-05:00"
   >
     <core:child page="changelog" />
     <core:child page="pragmatickm-contact.tld/" />
@@ -42,9 +42,9 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     <header>
       <ao:include
         page="/ao-badges/badges.inc.jspx"
-        arg.projectStatus="current-stable"
-        arg.managementStatus="production"
-        arg.packagingStatus="active"
+        arg.projectStatus="alpha"
+        arg.managementStatus="preview"
+        arg.packagingStatus="developmental"
         arg.javaseVersion="@{documented.javase.version}"
         arg.javaeeVersion="@{documented.javaee.version}"
         arg.semanticVersioning="2.0.0"
