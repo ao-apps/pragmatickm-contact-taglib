@@ -33,6 +33,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
   <packaging>bundle</packaging>
 
   <properties>
+    <project.build.outputTimestamp>2023-02-08T21:06:04Z</project.build.outputTimestamp>
     <module.name>com.pragmatickm.contact.taglib</module.name>
     <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://pragmatickm.com/">PragmaticKM</a>
 / <a target="${javadoc.target}" href="https://pragmatickm.com/contact/">Contact</a>
