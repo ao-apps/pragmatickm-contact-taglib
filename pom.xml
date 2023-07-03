@@ -151,6 +151,11 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
                       <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-fluent-html</outputDirectory>
                     </artifactItem>
                     <artifactItem>
+                      <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId><classifier>javadoc</classifier>
+                      <includes>element-list, package-list</includes>
+                      <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-fluent-html-any</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
                       <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><classifier>javadoc</classifier>
                       <includes>element-list, package-list</includes>
                       <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-lang</outputDirectory>
@@ -224,6 +229,10 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
                 <offlineLink>
                   <url>https://oss.aoapps.com/fluent-html/apidocs/</url>
                   <location>${project.build.directory}/offlineLinks/com.aoapps/ao-fluent-html</location>
+                </offlineLink>
+                <offlineLink>
+                  <url>https://oss.aoapps.com/fluent-html/any/apidocs/</url>
+                  <location>${project.build.directory}/offlineLinks/com.aoapps/ao-fluent-html-any</location>
                 </offlineLink>
                 <offlineLink>
                   <url>https://oss.aoapps.com/lang/apidocs/</url>
@@ -328,6 +337,9 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
         <groupId>com.aoapps</groupId><artifactId>ao-fluent-html</artifactId><version>0.7.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
+        <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId><version>0.7.0${POST-SNAPSHOT}</version>
+      </dependency>
+      <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><version>5.3.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
@@ -369,9 +381,6 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-encoding-taglib</artifactId><version>4.0.0${POST-SNAPSHOT}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId><version>0.7.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-servlet</artifactId><version>0.7.0${POST-SNAPSHOT}</version>
@@ -455,6 +464,9 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     </dependency>
     <dependency>
       <groupId>com.aoapps</groupId><artifactId>ao-fluent-html</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId>
     </dependency>
     <dependency>
       <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
