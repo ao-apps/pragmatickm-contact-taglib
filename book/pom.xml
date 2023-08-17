@@ -30,7 +30,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
   </parent>
 
   <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib-book</artifactId><version>1.6.1-POST-SNAPSHOT</version>
-  <packaging>bundle</packaging>
+  <packaging>jar</packaging>
 
   <properties>
     <module.name>com.pragmatickm.contact.taglib.book</module.name>
@@ -196,6 +196,14 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
                 <Automatic-Module-Name>${module.name}</Automatic-Module-Name>
                 <Private-Package>!.</Private-Package>
               </instructions>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId>
+            <configuration>
+              <excludes>
+                <exclude>**/module-info.class</exclude>
+              </excludes>
             </configuration>
           </plugin>
         </plugins>
