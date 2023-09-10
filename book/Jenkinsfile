@@ -65,7 +65,7 @@ def upstreamProjects = [
  * Variables that may be defined above this block:                                        *
  *                                                                                        *
  * deployJdk            The version of JDK that will be used for the deploy stage.        *
- *                      Defaults to '17'                                                  *
+ *                      Defaults to '20'                                                  *
  *                                                                                        *
  * buildJdks            The array of JDK versions that will build.                        *
  *                      Defaults to ['11', '17', '20']                                    *
@@ -162,7 +162,7 @@ def upstreamProjects = [
 
 // JDK versions
 if (!binding.hasVariable('deployJdk')) {
-  binding.setVariable('deployJdk', '17')
+  binding.setVariable('deployJdk', '20')
 }
 if (!binding.hasVariable('buildJdks')) {
   binding.setVariable(
