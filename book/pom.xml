@@ -41,6 +41,10 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     <documented.artifactId>pragmatickm-contact-taglib</documented.artifactId>
     <documented.name>PragmaticKM Contact Taglib</documented.name>
     <documented.description>Contacts nested within SemanticCMS pages and elements in a JSP environment.</documented.description>
+    <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://pragmatickm.com/">PragmaticKM</a>
+/ <a target="${javadoc.target}" href="https://pragmatickm.com/contact/">Contact</a>
+/ <a target="${javadoc.target}" href="${project.url}">Taglib</a>]]></javadoc.breadcrumbs>
+    <javadoc.taglibReference><![CDATA[<li><a target="${javadoc.target}" href="${project.url}pragmatickm-contact.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
     <!-- SonarQube -->
