@@ -168,9 +168,9 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
                       <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-net-types</outputDirectory>
                     </artifactItem>
                     <artifactItem>
-                      <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId><classifier>javadoc</classifier>
+                      <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId><classifier>javadoc</classifier>
                       <includes>element-list, package-list</includes>
-                      <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-taglib</outputDirectory>
+                      <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-servlet-util</outputDirectory>
                     </artifactItem>
                     <!-- ao-javadoc-offline: <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><classifier>javadoc</classifier> -->
                     <!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><classifier>javadoc</classifier> -->
@@ -245,8 +245,8 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
                   <location>${project.build.directory}/offlineLinks/com.aoapps/ao-net-types</location>
                 </offlineLink>
                 <offlineLink>
-                  <url>https://oss.aoapps.com/taglib/apidocs/</url>
-                  <location>${project.build.directory}/offlineLinks/com.aoapps/ao-taglib</location>
+                  <url>https://oss.aoapps.com/servlet-util/apidocs/</url>
+                  <location>${project.build.directory}/offlineLinks/com.aoapps/ao-servlet-util</location>
                 </offlineLink>
                 <!-- ao-javadoc-offline: <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><classifier>javadoc</classifier> -->
                 <!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><classifier>javadoc</classifier> -->
@@ -356,7 +356,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
         <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId><version>2.0.2${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId><version>8.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId><version>5.3.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <!-- javaee-web-api-bom: <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId> -->
       <!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
@@ -411,7 +411,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
         <groupId>com.aoapps</groupId><artifactId>ao-servlet-subrequest</artifactId><version>2.0.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId><version>5.3.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId><version>8.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-tempfiles</artifactId><version>3.0.2${POST-SNAPSHOT}</version>
@@ -485,7 +485,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
       <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId>
+      <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId>
     </dependency>
     <dependency>
       <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId>
