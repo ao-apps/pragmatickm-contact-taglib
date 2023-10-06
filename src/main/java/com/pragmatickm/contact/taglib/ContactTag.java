@@ -137,7 +137,7 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
   }
 
   @Override
-  protected void evaluateAttributes(Contact element, ELContext elContext) throws JspTagException, IOException {
+  protected void evaluateAttributes(Contact element, ELContext elContext) throws JspTagException {
     try {
       super.evaluateAttributes(element, elContext);
       element.setTitle(resolveValue(title, String.class, elContext));
