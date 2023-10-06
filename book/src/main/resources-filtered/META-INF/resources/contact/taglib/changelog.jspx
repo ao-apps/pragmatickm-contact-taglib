@@ -37,7 +37,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2017-07-25T20:56:44-05:00"
-    dateModified="2022-05-15T09:43:02-05:00"
+    dateModified="2023-10-06T05:35:14Z"
   >
     <c:set var="latestRelease" value="1.6.1" />
     <c:if test="${
@@ -55,6 +55,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
       >
         <ul>
           <li>Updated for <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> 2.</li>
+          <li><code>ElementTag.evaluateAttributes(…)</code> no longer throws <code>IOException</code>.</li>
         </ul>
       </changelog:release>
     </c:if>
