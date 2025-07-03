@@ -24,7 +24,7 @@ Contacts nested within [SemanticCMS](https://github.com/ao-apps/semanticcms) pag
 * [Changelog](https://pragmatickm.com/contact/taglib/changelog)
 * [Taglib Reference](https://pragmatickm.com/contact/taglib/pragmatickm-contact.tld/)
 * [API Docs](https://pragmatickm.com/contact/taglib/apidocs/)
-* [Maven Central Repository](https://central.sonatype.com/artifact/com.pragmatickm/pragmatickm-contact-taglib)
+* [Central Repository](https://central.sonatype.com/artifact/com.pragmatickm/pragmatickm-contact-taglib)
 * [GitHub](https://github.com/ao-apps/pragmatickm-contact-taglib)
 
 ## Contact Us
