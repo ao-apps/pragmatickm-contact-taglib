@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2021, 2022  AO Industries, Inc.
+Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2021, 2022, 2025  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -390,7 +390,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
   </tag>
   <tag>
     <!-- datePublished="2016-08-14T20:17:32-05:00" -->
-    <!-- dateModified="2017-07-27T20:48:04-05:00" -->
+    <!-- dateModified="2025-07-06T21:57:00Z" -->
     <description><![CDATA[
       <p class="semanticcms-tag-reference-summary">
         A contact may have any number of instant messaging handles.
@@ -405,7 +405,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     <body-content>empty</body-content>
     <attribute>
       <description><![CDATA[
-        <p>The type of the instant message, may be one of "aim", "icq", "skype".</p>
+        <p>The type of the instant message, may be one of "aim", "icq", "skype", "teams", "telegram", or "zoom".</p>
       ]]></description>
       <name>type</name>
       <required>true</required>
