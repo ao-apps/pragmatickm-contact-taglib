@@ -25,11 +25,11 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId><version>1.19.0-SNAPSHOT</version>
+    <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId><version>2.0.0-SNAPSHOT</version>
     <relativePath>../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>1.7.0-SNAPSHOT</version>
+  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <properties>
@@ -88,7 +88,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
 
   <ciManagement>
     <system>Jenkins</system>
-    <url>https://jenkins.aoindustries.com/job/ao/job/pragmatickm-1.x/job/contact/job/taglib/</url>
+    <url>https://jenkins.aoindustries.com/job/ao/job/pragmatickm-2.x/job/contact/job/taglib/</url>
   </ciManagement>
   <!-- Only one allowed in POM:
   <ciManagement>
@@ -353,19 +353,19 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
       <!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
       <!-- javaee-web-api-bom: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId> -->
       <dependency>
-        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-model</artifactId><version>1.7.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-model</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-servlet</artifactId><version>1.6.1${POST-SNAPSHOT}</version>
+        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-servlet</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId><version>1.14.1${POST-SNAPSHOT}</version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.21.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.16.0${POST-SNAPSHOT}</version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <!-- Transitive -->
       <dependency>
