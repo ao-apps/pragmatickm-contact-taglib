@@ -1,7 +1,7 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/ao-apps) [PragmaticKM](https://github.com/ao-apps/pragmatickm) / [Contact](https://github.com/ao-apps/pragmatickm-contact) / [Taglib](https://github.com/ao-apps/pragmatickm-contact-taglib)
 
-[![project: current stable](https://pragmatickm.com/ao-badges/project-current-stable.svg)](https://aoindustries.com/life-cycle#project-current-stable)
-[![management: production](https://pragmatickm.com/ao-badges/management-production.svg)](https://aoindustries.com/life-cycle#management-production)
+[![project: old stable](https://pragmatickm.com/ao-badges/project-old-stable.svg)](https://aoindustries.com/life-cycle#project-old-stable)
+[![management: migration](https://pragmatickm.com/ao-badges/management-migration.svg)](https://aoindustries.com/life-cycle#management-migration)
 [![packaging: active](https://pragmatickm.com/ao-badges/packaging-active.svg)](https://aoindustries.com/life-cycle#packaging-active)  
 [![java: &gt;= 11](https://pragmatickm.com/ao-badges/java-11.svg)](https://docs.oracle.com/en/java/javase/11/)
 [![java ee: &gt;= 7](https://pragmatickm.com/ao-badges/javaee-7.svg)](https://docs.oracle.com/javaee/7/)
