@@ -287,7 +287,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
         <groupId>com.aoapps</groupId><artifactId>ao-servlet-last-modified</artifactId><version>4.0.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-servlet-subrequest</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.aoapps</groupId><artifactId>ao-servlet-subrequest</artifactId><version>3.0.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-style</artifactId><version>3.0.0${POST-SNAPSHOT}</version>
