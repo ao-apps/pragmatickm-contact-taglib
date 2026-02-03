@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-contact-taglib - Contacts nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2017, 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
+Copyright (C) 2017, 2019, 2020, 2021, 2022, 2023, 2025, 2026  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,9 +37,9 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2017-07-25T20:56:44-05:00"
-    dateModified="2025-07-06T21:57:00Z"
+    dateModified="2026-02-03T11:20:37Z"
   >
-    <c:set var="latestRelease" value="1.6.1" />
+    <c:set var="latestRelease" value="1.19.0" />
     <c:if test="${
       fn:endsWith('@{project.version}', '-SNAPSHOT')
       and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')
@@ -51,13 +51,22 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
         groupId="@{project.groupId}"
         artifactId="@{documented.artifactId}"
         scmUrl="@{project.scm.url}"
-      >
-        <ul>
-          <li><code>ElementTag.evaluateAttributes(…)</code> no longer throws <code>IOException</code>.</li>
-          <li>Skype has been discontinued: added support for contact im types <code>teams</code>, <code>telegram</code>, and <code>zoom</code>.</li>
-        </ul>
-      </changelog:release>
+      />
     </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.19.0"
+      datePublished="2026-02-03T11:20:37Z"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li><code>ElementTag.evaluateAttributes(…)</code> no longer throws <code>IOException</code>.</li>
+        <li>Skype has been discontinued: added support for contact im types <code>teams</code>, <code>telegram</code>, and <code>zoom</code>.</li>
+      </ul>
+    </changelog:release>
 
     <changelog:release
       projectName="@{documented.name}"
