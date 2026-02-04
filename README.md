@@ -1,8 +1,8 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/ao-apps) [PragmaticKM](https://github.com/ao-apps/pragmatickm) / [Contact](https://github.com/ao-apps/pragmatickm-contact) / [Taglib](https://github.com/ao-apps/pragmatickm-contact-taglib)
 
-[![project: old stable](https://pragmatickm.com/ao-badges/project-old-stable.svg)](https://aoindustries.com/life-cycle#project-old-stable)
-[![management: migration](https://pragmatickm.com/ao-badges/management-migration.svg)](https://aoindustries.com/life-cycle#management-migration)
-[![packaging: active](https://pragmatickm.com/ao-badges/packaging-active.svg)](https://aoindustries.com/life-cycle#packaging-active)  
+[![project: end of life](https://pragmatickm.com/ao-badges/project-end-of-life.svg)](https://aoindustries.com/life-cycle#project-end-of-life)
+[![management: cleanup](https://pragmatickm.com/ao-badges/management-cleanup.svg)](https://aoindustries.com/life-cycle#management-cleanup)
+[![packaging: unsupported](https://pragmatickm.com/ao-badges/packaging-unsupported.svg)](https://aoindustries.com/life-cycle#packaging-unsupported)  
 [![java: &gt;= 11](https://pragmatickm.com/ao-badges/java-11.svg)](https://docs.oracle.com/en/java/javase/11/)
 [![java ee: &gt;= 7](https://pragmatickm.com/ao-badges/javaee-7.svg)](https://docs.oracle.com/javaee/7/)
 [![semantic versioning: 2.0.0](https://pragmatickm.com/ao-badges/semver-2.0.0.svg)](https://semver.org/spec/v2.0.0.html)
@@ -18,6 +18,10 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.pragmatickm%3Apragmatickm-contact-taglib&metric=coverage)](https://sonarcloud.io/component_measures?branch=1.x&id=com.pragmatickm%3Apragmatickm-contact-taglib&metric=Coverage)
 
 Contacts nested within [SemanticCMS](https://github.com/ao-apps/semanticcms) pages and elements in a JSP environment.
+
+## End of Life
+This branch is end-of-life and will no longer receive any updates or releases.
+Please switch to a newer, maintained branch.
 
 ## Project Links
 * [Project Home](https://pragmatickm.com/contact/taglib/)
