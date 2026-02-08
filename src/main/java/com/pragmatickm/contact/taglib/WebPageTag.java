@@ -25,11 +25,7 @@ package com.pragmatickm.contact.taglib;
 
 import static com.aoapps.servlet.el.ElUtils.resolveValue;
 
-import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.Serialization;
-import com.aoapps.encoding.servlet.DoctypeEE;
-import com.aoapps.encoding.servlet.SerializationEE;
-import com.aoapps.html.Document;
+import com.aoapps.html.servlet.DocumentEE;
 import com.pragmatickm.contact.model.Contact;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.model.ElementWriter;
@@ -43,13 +39,13 @@ import com.semanticcms.core.taglib.PageElementContext;
 import jakarta.el.ValueExpression;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.JspWriter;
 import jakarta.servlet.jsp.PageContext;
 import jakarta.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.io.Writer;
-import java.nio.charset.Charset;
 
 public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 
@@ -59,15 +55,15 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
     this.href = href;
   }
 
+  private ServletContext servletContext;
+  private HttpServletRequest request;
+  private HttpServletResponse response;
   private String hrefStr;
-  private Serialization serialization;
-  private Doctype doctype;
-  private Charset characterEncoding;
 
   @Override
   public void doTag() throws JspException, IOException {
     final PageContext pageContext = (PageContext) getJspContext();
-    final HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
+    request = (HttpServletRequest) pageContext.getRequest();
 
     // Get the current capture state
     final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
@@ -80,10 +76,8 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
         Contact currentContact = (Contact) node;
         currentContact.addWebPage(hrefStr);
       } else {
-        ServletContext servletContext = pageContext.getServletContext();
-        serialization = SerializationEE.get(servletContext, request);
-        doctype = DoctypeEE.get(servletContext, request);
-        characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
+        servletContext = pageContext.getServletContext();
+        response = (HttpServletResponse) pageContext.getResponse();
 
         JspWriter out = pageContext.getOut();
         if (node == null) {
@@ -118,9 +112,10 @@ public class WebPageTag extends SimpleTagSupport implements ElementWriter {
 
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException {
-    new Document(serialization, doctype, characterEncoding, out)
-        .setAutonli(false)// Do not add extra newlines to JSP
-        .setIndent(false)// Do not add extra indentation to JSP
+    new DocumentEE(servletContext, request, response, out,
+        false, // Do not add extra newlines to JSP
+        false  // Do not add extra indentation to JSP
+    )
         .span().clazz("pragmatickm-contact-web-page").__(span -> span
             .a(hrefStr).__(hrefStr)
         );
