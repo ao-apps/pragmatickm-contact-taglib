@@ -25,11 +25,7 @@ package com.pragmatickm.contact.taglib;
 
 import static com.aoapps.servlet.el.ElUtils.resolveValue;
 
-import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.Serialization;
-import com.aoapps.encoding.servlet.DoctypeEE;
-import com.aoapps.encoding.servlet.SerializationEE;
-import com.aoapps.html.Document;
+import com.aoapps.html.servlet.DocumentEE;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.Strings;
 import com.aoapps.lang.validation.ValidationException;
@@ -44,12 +40,12 @@ import jakarta.el.ELContext;
 import jakarta.el.ValueExpression;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.JspTagException;
 import jakarta.servlet.jsp.PageContext;
 import java.io.IOException;
 import java.io.Writer;
-import java.nio.charset.Charset;
 
 public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*/ {
 
@@ -163,23 +159,21 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
     }
   }
 
+  private ServletContext servletContext;
+  private HttpServletRequest request;
+  private HttpServletResponse response;
   private PageIndex pageIndex;
   private Object styleObj;
-  private Serialization serialization;
-  private Doctype doctype;
-  private Charset characterEncoding;
 
   @Override
   protected void doBody(Contact contact, CaptureLevel captureLevel) throws JspException, IOException {
     final PageContext pageContext = (PageContext) getJspContext();
     if (captureLevel == CaptureLevel.BODY) {
-      ServletContext servletContext = pageContext.getServletContext();
-      HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
-      pageIndex = PageIndex.getCurrentPageIndex(pageContext.getRequest());
+      servletContext = pageContext.getServletContext();
+      request = (HttpServletRequest) pageContext.getRequest();
+      response = (HttpServletResponse) pageContext.getResponse();
+      pageIndex = PageIndex.getCurrentPageIndex(request);
       styleObj = Coercion.nullIfEmpty(resolveValue(style, Object.class, pageContext.getELContext()));
-      serialization = SerializationEE.get(servletContext, request);
-      doctype = DoctypeEE.get(servletContext, request);
-      characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
     }
     super.doBody(contact, captureLevel);
   }
@@ -188,9 +182,10 @@ public class ContactTag extends ElementTag<Contact> /*implements StyleAttribute*
   public void writeTo(Writer out, ElementContext context) throws IOException {
     ContactHtmlRenderer.writeContactTable(
         pageIndex,
-        new Document(serialization, doctype, characterEncoding, out)
-            .setAutonli(false)// Do not add extra newlines to JSP
-            .setIndent(false), // Do not add extra indentation to JSP
+        new DocumentEE(servletContext, request, response, out,
+            false, // Do not add extra newlines to JSP
+            false  // Do not add extra indentation to JSP
+        ),
         context,
         styleObj,
         getElement()

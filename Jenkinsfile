@@ -28,10 +28,8 @@ binding.setVariable('upstreamProjects', [
   '../parent', // <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId>
 
   // Direct
-  '../../oss/encoding', // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>
-  '../../oss/encoding-servlet', // <groupId>com.aoapps</groupId><artifactId>ao-encoding-servlet</artifactId>
-  '../../oss/fluent-html', // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html</artifactId>
   '../../oss/fluent-html-any', // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId>
+  '../../oss/fluent-html-servlet', // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-servlet</artifactId>
   '../../oss/lang', // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
   '../../oss/net-types', // <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
   '../../oss/servlet-util', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId>
