@@ -48,7 +48,6 @@ binding.setVariable('upstreamProjects', [
 
   // Runtime Direct
   '../../oss/mime-mappings', // <groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId>
-  // No Jenkins: <groupId>org.glassfish.web</groupId><artifactId>jakarta.servlet.jsp.jstl</artifactId>
   '../../semanticcms/core/pages-jspx', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-pages-jspx</artifactId>
 
   // BOM
