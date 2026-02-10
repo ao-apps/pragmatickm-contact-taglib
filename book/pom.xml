@@ -141,7 +141,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
             <configuration>
               <artifactItems>
                 <artifactItem>
-                  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+                  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>2.0.0${POST-SNAPSHOT}</version>
                   <type>jar</type>
                   <includes>META-INF/pragmatickm-contact.tld</includes>
                 </artifactItem>
@@ -151,7 +151,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
         </executions>
         <dependencies>
           <dependency>
-            <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+            <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-taglib</artifactId><version>2.0.0${POST-SNAPSHOT}</version>
             <type>jar</type>
             <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
           </dependency>
