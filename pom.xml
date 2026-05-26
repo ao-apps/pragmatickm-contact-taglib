@@ -304,7 +304,7 @@ along with pragmatickm-contact-taglib.  If not, see <https://www.gnu.org/license
         <groupId>com.aoapps</groupId><artifactId>ao-encoding-taglib</artifactId><version>6.0.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId><version>6.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId><version>6.0.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-io-buffer</artifactId><version>4.2.0${POST-SNAPSHOT}</version>
